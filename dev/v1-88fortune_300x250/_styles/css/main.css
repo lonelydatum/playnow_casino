@@ -215,8 +215,94 @@ sup {
   opacity: 0;
 }
 
-.frame1 {
+.coin {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(0px, -100px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, -100px) scale(0.5, 0.5);
+  transform: translate(0px, -100px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.f1 {
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
   opacity: 0;
+}
+
+.f2 {
+  -webkit-transform: translate(0px, -250px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, -250px) scale(0.5, 0.5);
+  transform: translate(0px, -250px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  opacity: 0;
+}
+
+.shadMain {
+  width: 300px;
+  height: 250px;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.shadMain .shad {
+  width: 100px;
+  height: 250px;
+  box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.shadMain .shad1 {
+  -webkit-transform: translate(0px, -250px);
+  -ms-transform: translate(0px, -250px);
+  transform: translate(0px, -250px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.shadMain .shad2 {
+  -webkit-transform: translate(100px, -250px);
+  -ms-transform: translate(100px, -250px);
+  transform: translate(100px, -250px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.shadMain .shad3 {
+  -webkit-transform: translate(200px, -250px);
+  -ms-transform: translate(200px, -250px);
+  transform: translate(200px, -250px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 #banner {
