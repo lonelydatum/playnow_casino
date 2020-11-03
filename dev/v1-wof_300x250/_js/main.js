@@ -15,7 +15,7 @@ function start(){
 	
 	const time = .3
 
-	tl.to("#how_1 .flip-card-inner", time, {rotationY:"+=180"});
+	tl.to("#how_1 .flip-card-inner", time, {rotationY:"+=180"}, "+=1");
 	tl.to("#do_1 .flip-card-inner", time, {rotationY:"+=180"});
 	tl.to("#you_1 .flip-card-inner", time, {rotationY:"+=180"});
 	tl.to("#you_2 .flip-card-inner", time, {rotationY:"+=180"});
