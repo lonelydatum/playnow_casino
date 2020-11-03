@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Created: Nov 3, 2:36</title>
+<title>Created: Nov 3, 3:08</title>
 <style>#banner{opacity: 0;}</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="ad.size" content="width=300, height=250">
@@ -593,6 +593,12 @@ function slicerSet(frame) {
 	TweenLite.set("." + frame + ".c", { clip: "rect(0px," + w_ * 3 + "px," + h + "px," + (w_ * 3 - w_) + "px)" });
 }
 
+function range(min, max) {
+	var diff = max - min;
+	var res = Math.random() * diff + min;
+	return res;
+}
+
 function slicerTween() {
 
 	var tl = new TimelineMax();
@@ -606,28 +612,27 @@ function slicerTween() {
 	return tl;
 }
 
+function init() {
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+	slicerSet('f1');
+	slicerSet('f2');
+	return tl;
+}
+
 exports.size = size;
-exports.slicerSet = slicerSet;
+exports.range = range;
 exports.slicerTween = slicerTween;
+exports.init = init;
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-function range(min, max) {
-	var diff = max - min;
-	var res = Math.random() * diff + min;
-	return res;
-}
-
 function start() {
 
-	var tl = new TimelineMax();
-	tl.set(".frame1", { opacity: 1 });
-
-	(0, _commonJsCommonJs.slicerSet)('f1');
-	(0, _commonJsCommonJs.slicerSet)('f2');
+	var tl = (0, _commonJsCommonJs.init)();
 
 	var speed = .6;
 

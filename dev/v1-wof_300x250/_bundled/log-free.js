@@ -20,6 +20,12 @@ function slicerSet(frame) {
 	TweenLite.set("." + frame + ".c", { clip: "rect(0px," + w_ * 3 + "px," + h + "px," + (w_ * 3 - w_) + "px)" });
 }
 
+function range(min, max) {
+	var diff = max - min;
+	var res = Math.random() * diff + min;
+	return res;
+}
+
 function slicerTween() {
 
 	var tl = new TimelineMax();
@@ -33,25 +39,27 @@ function slicerTween() {
 	return tl;
 }
 
+function init() {
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+	slicerSet('f1');
+	slicerSet('f2');
+	return tl;
+}
+
 exports.size = size;
-exports.slicerSet = slicerSet;
+exports.range = range;
 exports.slicerTween = slicerTween;
+exports.init = init;
 
 },{}],2:[function(require,module,exports){
 "use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-function range(min, max) {
-	var diff = max - min;
-	var res = Math.random() * diff + min;
-	return res;
-}
-
 function start() {
 
-	var tl = new TimelineMax();
-	tl.set(".frame1", { opacity: 1 });
+	var tl = (0, _commonJsCommonJs.init)();
 
 	var time = .3;
 
@@ -65,16 +73,9 @@ function start() {
 	tl.to("#exite_3 .flip-card-inner", time, { rotationY: "+=180" });
 	tl.to("#exite_4 .flip-card-inner", time, { rotationY: "+=180" });
 
-	(0, _commonJsCommonJs.slicerSet)('f1');
-	(0, _commonJsCommonJs.slicerSet)('f2');
-
-	var speed = .6;
-
 	tl.add("end", "+=.5");
 
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
-
-	// tl.gotoAndPlay("f2")
 }
 
 start();

@@ -1,22 +1,11 @@
-import {size, slicerSet, slicerTween} from '../../_common/js/common.js'
+import {size, init, slicerTween} from '../../_common/js/common.js'
 
-function range(min, max) {
-	const diff = max-min
-	const res = (Math.random()*diff) + min
-	return res
-}
+
 
 function start(){
 	
-	const tl = new TimelineMax()
-	tl.set(".frame1", {opacity:1})
+	const tl = init()
 	
-	
-
-	
-	
-	slicerSet('f1')
-	slicerSet('f2')
 
 	const speed = .6
 

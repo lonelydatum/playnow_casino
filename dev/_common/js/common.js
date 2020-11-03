@@ -16,7 +16,11 @@ function slicerSet(frame){
 	
 }
 
-
+function range(min, max) {
+	const diff = max-min
+	const res = (Math.random()*diff) + min
+	return res
+}
 
 function slicerTween(){
 
@@ -32,5 +36,18 @@ function slicerTween(){
 	return tl
 }
 
+function init(){
+	const tl = new TimelineMax()
+	tl.set(".frame1", {opacity:1})
+	slicerSet('f1')
+	slicerSet('f2')
+	return tl
+}
 
-export {size, slicerSet, slicerTween}
+
+export {
+	size, 
+	range, 
+	slicerTween, 
+	init
+}

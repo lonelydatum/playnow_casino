@@ -1,18 +1,10 @@
-import {size, slicerSet, slicerTween} from '../../_common/js/common.js'
+import {size, init, slicerTween} from '../../_common/js/common.js'
 
-function range(min, max) {
-	const diff = max-min
-	const res = (Math.random()*diff) + min
-	return res
-}
+
 
 function start(){
-	TweenLite.defaultEase = Power3.easeOut
-
-	slicerSet("f1")
-	slicerSet("f2")
-
-	const tl = new TimelineMax()
+	
+	const tl = init()
 	tl.set(".frame1", {opacity:1})
 	tl.from(".t1", .3, {opacity:0}, "+=.5")
 
@@ -22,7 +14,7 @@ function start(){
 
 	tl.add(slicerTween(), "+=4")
 
-	// tl.gotoAndPlay("f2")
+	
 		
 }
 

@@ -20,6 +20,12 @@ function slicerSet(frame) {
 	TweenLite.set("." + frame + ".c", { clip: "rect(0px," + w_ * 3 + "px," + h + "px," + (w_ * 3 - w_) + "px)" });
 }
 
+function range(min, max) {
+	var diff = max - min;
+	var res = Math.random() * diff + min;
+	return res;
+}
+
 function slicerTween() {
 
 	var tl = new TimelineMax();
@@ -33,28 +39,27 @@ function slicerTween() {
 	return tl;
 }
 
+function init() {
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+	slicerSet('f1');
+	slicerSet('f2');
+	return tl;
+}
+
 exports.size = size;
-exports.slicerSet = slicerSet;
+exports.range = range;
 exports.slicerTween = slicerTween;
+exports.init = init;
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-function range(min, max) {
-	var diff = max - min;
-	var res = Math.random() * diff + min;
-	return res;
-}
-
 function start() {
-	TweenLite.defaultEase = Power3.easeOut;
-	var tl = new TimelineMax();
-	tl.set(".frame1", { opacity: 1 });
 
-	(0, _commonJsCommonJs.slicerSet)('f1');
-	(0, _commonJsCommonJs.slicerSet)('f2');
+	var tl = (0, _commonJsCommonJs.init)();
 
 	group1();
 	group2();
@@ -92,8 +97,8 @@ function group2() {
 
 function coinItem(id, x) {
 	var tl = new TimelineMax({ repeat: 3 });
-	var delay = range(0, .8);
-	var time = range(.5, .8);
+	var delay = (0, _commonJsCommonJs.range)(0, .8);
+	var time = (0, _commonJsCommonJs.range)(.5, .8);
 	tl.set(id, { x: x, y: -100 });
 	tl.to(id, .7, { y: "+=340", rotation: "+=190", ease: Power1.easeIn });
 	return tl;
