@@ -1,4 +1,4 @@
-import {size} from '../../_common/js/common.js'
+import {size, slicerSet, slicerTween} from '../../_common/js/common.js'
 
 function range(min, max) {
 	const diff = max-min
@@ -15,8 +15,8 @@ function start(){
 
 	
 	
-	slicer('f1')
-	slicer('f2')
+	slicerSet('f1')
+	slicerSet('f2')
 
 	group1()	
 	group2()
@@ -37,37 +37,12 @@ function start(){
 
 	tl.add("end", "+=4")
 
-	tl.add(slicerTw(), "end")
+	tl.add(slicerTween(), "end")
 
 	// tl.gotoAndPlay("f2")
 		
 }
 
-function slicerTw(){
-
-	const tl = new TimelineMax()
-	tl.set([".f1", ".f2"], {opacity:1})
-	const time = 1
-	tl.to([".a"], time, {y:"+=250"}, 0)
-	tl.to([".b"], time, {y:"+=250"}, .2)
-	tl.to([".c"], time, {y:"+=250"}, .3)
-
-
-	tl.to(".shad", .5, {opacity:0})
-	return tl
-}
-
-function slicer(frame){
-	const el = document.getElementById(frame)
-	const w = el.offsetWidth
-	const h = el.offsetHeight
-	
-	const w_ = w/3
-	TweenLite.set(`.${frame}a`, {clip: `rect(0px,${w_}px,${h}px, ${(w_*1)-w_}px)`})
-	TweenLite.set(`.${frame}b`, {clip: `rect(0px,${w_*2}px,${h}px,${(w_*2)-w_}px)`})
-	TweenLite.set(`.${frame}c`, {clip: `rect(0px,${w_*3}px,${h}px,${(w_*3)-w_}px)`})
-	
-}
 
 function group1(){
 	const tl = new TimelineMax()
@@ -87,11 +62,9 @@ function group2(){
 }
 
 function coinItem(id, x){
-	const tl = new TimelineMax({repeat:3})
-	
+	const tl = new TimelineMax({repeat:3})	
 	const delay = range(0, .8)
-	const time = range(.5, .8)
-	console.log(x);
+	const time = range(.5, .8)	
 	tl.set(id,  {x, y:-100})
 	tl.to(id, .7, {y:"+=340", rotation:"+=190",ease:Power1.easeIn})
 	return tl

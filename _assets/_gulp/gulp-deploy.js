@@ -17,7 +17,7 @@ function deploy(projectName){
         .pipe(replace("main.js", 'log-free.js'))
         .pipe(htmlmin({removeComments:true, collapseWhitespace:true, preserveLineBreaks:true}))
         
-        .pipe(inlinesource({compress:true, svgAsImage:true}))
+        .pipe(inlinesource({compress:false, svgAsImage:true}))
         .on('error', notify.onError({message:"<%= error.message %>", wait: false}))               
         .pipe(replace('data:image/svg+xml;utf8', 'data:image/svg+xml;charset=utf-8'))
         .pipe(replace('<script type="text/javascript" src="http://localhost:48626/takana.js"></script>', ''))

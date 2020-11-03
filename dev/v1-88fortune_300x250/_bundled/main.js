@@ -1,15 +1,41 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-TweenLite.defaultEase = Power2.easeInOut;
+TweenLite.defaultEase = Power3.easeInOut;
+
+function slicerSet(frame) {
+	var el = document.getElementById(frame);
+	var w = el.offsetWidth;
+	var h = el.offsetHeight;
+
+	var w_ = w / 3;
+	TweenLite.set("." + frame + ".a", { clip: "rect(0px," + w_ + "px," + h + "px, " + (w_ * 1 - w_) + "px)" });
+	TweenLite.set("." + frame + ".b", { clip: "rect(0px," + w_ * 2 + "px," + h + "px," + (w_ * 2 - w_) + "px)" });
+	TweenLite.set("." + frame + ".c", { clip: "rect(0px," + w_ * 3 + "px," + h + "px," + (w_ * 3 - w_) + "px)" });
+}
+
+function slicerTween() {
+
+	var tl = new TimelineMax();
+	tl.set([".f1", ".f2"], { opacity: 1 });
+	var time = 1;
+	tl.to([".a"], time, { y: "+=" + size.h }, 0);
+	tl.to([".b"], time, { y: "+=" + size.h }, .2);
+	tl.to([".c"], time, { y: "+=" + size.h }, .3);
+
+	tl.to(".shad", .5, { opacity: 0 });
+	return tl;
+}
 
 exports.size = size;
+exports.slicerSet = slicerSet;
+exports.slicerTween = slicerTween;
 
 },{}],2:[function(require,module,exports){
 'use strict';
@@ -27,8 +53,8 @@ function start() {
 	var tl = new TimelineMax();
 	tl.set(".frame1", { opacity: 1 });
 
-	slicer('f1');
-	slicer('f2');
+	(0, _commonJsCommonJs.slicerSet)('f1');
+	(0, _commonJsCommonJs.slicerSet)('f2');
 
 	group1();
 	group2();
@@ -42,33 +68,9 @@ function start() {
 
 	tl.add("end", "+=4");
 
-	tl.add(slicerTw(), "end");
+	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 
 	// tl.gotoAndPlay("f2")
-}
-
-function slicerTw() {
-
-	var tl = new TimelineMax();
-	tl.set([".f1", ".f2"], { opacity: 1 });
-	var time = 1;
-	tl.to([".a"], time, { y: "+=250" }, 0);
-	tl.to([".b"], time, { y: "+=250" }, .2);
-	tl.to([".c"], time, { y: "+=250" }, .3);
-
-	tl.to(".shad", .5, { opacity: 0 });
-	return tl;
-}
-
-function slicer(frame) {
-	var el = document.getElementById(frame);
-	var w = el.offsetWidth;
-	var h = el.offsetHeight;
-
-	var w_ = w / 3;
-	TweenLite.set('.' + frame + 'a', { clip: 'rect(0px,' + w_ + 'px,' + h + 'px, ' + (w_ * 1 - w_) + 'px)' });
-	TweenLite.set('.' + frame + 'b', { clip: 'rect(0px,' + w_ * 2 + 'px,' + h + 'px,' + (w_ * 2 - w_) + 'px)' });
-	TweenLite.set('.' + frame + 'c', { clip: 'rect(0px,' + w_ * 3 + 'px,' + h + 'px,' + (w_ * 3 - w_) + 'px)' });
 }
 
 function group1() {
@@ -90,10 +92,8 @@ function group2() {
 
 function coinItem(id, x) {
 	var tl = new TimelineMax({ repeat: 3 });
-
 	var delay = range(0, .8);
 	var time = range(.5, .8);
-	console.log(x);
 	tl.set(id, { x: x, y: -100 });
 	tl.to(id, .7, { y: "+=340", rotation: "+=190", ease: Power1.easeIn });
 	return tl;
