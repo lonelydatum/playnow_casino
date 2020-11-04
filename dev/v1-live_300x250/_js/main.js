@@ -6,7 +6,8 @@ function start(){
 	
 	const tl = init()
 	tl.set(".frame1", {opacity:1})
-	tl.from(".t1", .3, {opacity:0}, "+=.5")
+	tl.from(".t1a", .3, {opacity:0}, "+=.3")
+	tl.from(".t1b", .3, {opacity:0}, "+=.3")
 
 	tl.add("wipe", "+=3")
 	tl.set(".wiper", {className:"+=wiperOn"}, "wipe")

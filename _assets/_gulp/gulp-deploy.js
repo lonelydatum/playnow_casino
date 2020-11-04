@@ -13,6 +13,11 @@ const zip           = require('gulp-zip');
 
 function deploy(projectName){
 	var entry = './dev/'+projectName+'/index.html';
+
+    gulp.src('./dev/'+projectName+'/images/**.*')
+    .pipe(gulp.dest('./docs/deploy/'+projectName));
+
+
 	var stream =  gulp.src(entry)
         .pipe(replace("main.js", 'log-free.js'))
         .pipe(htmlmin({removeComments:true, collapseWhitespace:true, preserveLineBreaks:true}))
@@ -23,6 +28,7 @@ function deploy(projectName){
         .pipe(replace('<script type="text/javascript" src="http://localhost:48626/takana.js"></script>', ''))
         .pipe(replace("takanaClient.run({host: 'localhost:48626'});", ''))
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))
+        .pipe(replace("./images/", ''))
         
         .pipe(gulp.dest('./docs/deploy/'+projectName));
         

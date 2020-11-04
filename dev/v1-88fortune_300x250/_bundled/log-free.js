@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
 	value: true
 });
 var banner = document.getElementById('banner');
@@ -9,15 +9,21 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power3.easeInOut;
 
+function bgExitHandler(e) {
+	Enabler.exit('Background Exit');
+}
+
+document.getElementById('banner').addEventListener('click', bgExitHandler, false);
+
 function slicerSet(frame) {
 	var el = document.getElementById(frame);
 	var w = el.offsetWidth;
 	var h = el.offsetHeight;
 
 	var w_ = w / 3;
-	TweenLite.set("." + frame + ".a", { clip: "rect(0px," + w_ + "px," + h + "px, " + (w_ * 1 - w_) + "px)" });
-	TweenLite.set("." + frame + ".b", { clip: "rect(0px," + w_ * 2 + "px," + h + "px," + (w_ * 2 - w_) + "px)" });
-	TweenLite.set("." + frame + ".c", { clip: "rect(0px," + w_ * 3 + "px," + h + "px," + (w_ * 3 - w_) + "px)" });
+	TweenLite.set('.' + frame + '.a', { clip: 'rect(0px,' + w_ + 'px,' + h + 'px, ' + (w_ * 1 - w_) + 'px)' });
+	TweenLite.set('.' + frame + '.b', { clip: 'rect(0px,' + w_ * 2 + 'px,' + h + 'px,' + (w_ * 2 - w_) + 'px)' });
+	TweenLite.set('.' + frame + '.c', { clip: 'rect(0px,' + w_ * 3 + 'px,' + h + 'px,' + (w_ * 3 - w_) + 'px)' });
 }
 
 function range(min, max) {
@@ -30,10 +36,10 @@ function slicerTween() {
 
 	var tl = new TimelineMax();
 	tl.set([".f1", ".f2"], { opacity: 1 });
-	var time = 1;
-	tl.to([".a"], time, { y: "+=" + size.h }, 0);
-	tl.to([".b"], time, { y: "+=" + size.h }, .2);
-	tl.to([".c"], time, { y: "+=" + size.h }, .3);
+	var time = 175 / size.h;
+	tl.to([".a"], time, { y: '+=' + size.h }, 0);
+	tl.to([".b"], time, { y: '+=' + size.h }, .2);
+	tl.to([".c"], time, { y: '+=' + size.h }, .3);
 
 	tl.to(".shad", .5, { opacity: 0 });
 	return tl;
@@ -42,8 +48,10 @@ function slicerTween() {
 function init() {
 	var tl = new TimelineMax();
 	tl.set(".frame1", { opacity: 1 });
-	slicerSet('f1');
-	slicerSet('f2');
+	setTimeout(function () {
+		slicerSet('f1');
+		slicerSet('f2');
+	}, 2000);
 	return tl;
 }
 
@@ -80,23 +88,23 @@ function start() {
 
 function group1() {
 	var tl = new TimelineMax();
-	tl.add(coinItem(".coin_a", -60), 0);
-	tl.add(coinItem(".coin_b", -30), .2);
-	tl.add(coinItem(".coin_c", 210), .1);
-	tl.add(coinItem(".coin_d", 230), .4);
+	tl.add(coinItem(".coin_a", -60, 3), 0);
+	tl.add(coinItem(".coin_b", -30, 3), .2);
+	tl.add(coinItem(".coin_c", 210, 3), .1);
+	tl.add(coinItem(".coin_d", 230, 3), .4);
 }
 
 function group2() {
 	var tl = new TimelineMax();
 	tl.add("t2", 3.2);
-	tl.add(coinItem(".coin_a", 100), "t2+=.1");
-	tl.add(coinItem(".coin_b", 130), "t2+=.2");
-	tl.add(coinItem(".coin_c", 180), "t2+=.3");
-	tl.add(coinItem(".coin_d", 200), "t2+=.4");
+	tl.add(coinItem(".coin_a", 100, 1), "t2+=.1");
+	tl.add(coinItem(".coin_b", 130, 1), "t2+=.2");
+	tl.add(coinItem(".coin_c", 180, 1), "t2+=.3");
+	tl.add(coinItem(".coin_d", 200, 1), "t2+=.4");
 }
 
-function coinItem(id, x) {
-	var tl = new TimelineMax({ repeat: 3 });
+function coinItem(id, x, repeat) {
+	var tl = new TimelineMax({ repeat: repeat });
 	var delay = (0, _commonJsCommonJs.range)(0, .8);
 	var time = (0, _commonJsCommonJs.range)(.5, .8);
 	tl.set(id, { x: x, y: -100 });

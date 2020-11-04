@@ -6,8 +6,9 @@ function start(){
 	
 	const tl = init()
 	
+	TweenLite.defaultEase = Power3.easeOut
 
-	const speed = .6
+	const speed = .7
 
 	tl.from(".t1", .4, {opacity:0}, "+=.3")
 
@@ -17,9 +18,9 @@ function start(){
 
 
 	tl.add("t2-in")
-	tl.from(".t2", speed, {opacity:0, x:"-=300"}, "t1-out")
-	tl.from(".screen", speed, {opacity:0, x:"-=300"}, "t1-out")
-	tl.from(".dragon2", speed, {opacity:0, x:"-=300"}, "t1-out")
+	tl.from(".t2", speed, { x:"-=300"}, "t1-out")
+	tl.from(".screen", speed, { x:"-=300"}, "t1-out")
+	tl.from(".dragon2", speed, { x:"-=90"}, "t1-out+=.3")
 
 	
 	tl.add("end", "+=3")

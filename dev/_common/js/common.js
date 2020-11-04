@@ -3,6 +3,12 @@ const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
 TweenLite.defaultEase = Power3.easeInOut
 
+function bgExitHandler(e) {
+  Enabler.exit('Background Exit');
+}
+
+document.getElementById('banner').addEventListener('click', bgExitHandler, false);
+
 
 function slicerSet(frame){
 	const el = document.getElementById(frame)
@@ -26,7 +32,7 @@ function slicerTween(){
 
 	const tl = new TimelineMax()
 	tl.set([".f1", ".f2"], {opacity:1})
-	const time = 1
+	const time = 175 / size.h
 	tl.to([".a"], time, {y:`+=${size.h}`}, 0)
 	tl.to([".b"], time, {y:`+=${size.h}`}, .2)
 	tl.to([".c"], time, {y:`+=${size.h}`}, .3)
@@ -39,8 +45,10 @@ function slicerTween(){
 function init(){
 	const tl = new TimelineMax()
 	tl.set(".frame1", {opacity:1})
-	slicerSet('f1')
-	slicerSet('f2')
+	setTimeout(()=>{
+		slicerSet('f1')
+		slicerSet('f2')
+	}, 2000)
 	return tl
 }
 

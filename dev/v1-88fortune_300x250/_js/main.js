@@ -35,23 +35,23 @@ function start(){
 
 function group1(){
 	const tl = new TimelineMax()
-	tl.add(coinItem(".coin_a", -60), 0)
-	tl.add(coinItem(".coin_b", -30), .2)
-	tl.add(coinItem(".coin_c", 210), .1)
-	tl.add(coinItem(".coin_d", 230), .4)
+	tl.add(coinItem(".coin_a", -60, 3), 0)
+	tl.add(coinItem(".coin_b", -30, 3), .2)
+	tl.add(coinItem(".coin_c", 210, 3), .1)
+	tl.add(coinItem(".coin_d", 230, 3), .4)
 }
 
 function group2(){
 	const tl = new TimelineMax()
 	tl.add("t2", 3.2)
-	tl.add(coinItem(".coin_a", 100), "t2+=.1")
-	tl.add(coinItem(".coin_b", 130), "t2+=.2")
-	tl.add(coinItem(".coin_c", 180), "t2+=.3")
-	tl.add(coinItem(".coin_d", 200), "t2+=.4")
+	tl.add(coinItem(".coin_a", 100, 1), "t2+=.1")
+	tl.add(coinItem(".coin_b", 130, 1), "t2+=.2")
+	tl.add(coinItem(".coin_c", 180, 1), "t2+=.3")
+	tl.add(coinItem(".coin_d", 200, 1), "t2+=.4")
 }
 
-function coinItem(id, x){
-	const tl = new TimelineMax({repeat:3})	
+function coinItem(id, x, repeat){
+	const tl = new TimelineMax({repeat:repeat})	
 	const delay = range(0, .8)
 	const time = range(.5, .8)	
 	tl.set(id,  {x, y:-100})
