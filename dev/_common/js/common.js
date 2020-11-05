@@ -10,15 +10,21 @@ function bgExitHandler(e) {
 document.getElementById('banner').addEventListener('click', bgExitHandler, false);
 
 
-function slicerSet(frame){
-	const el = document.getElementById(frame)
-	const w = el.offsetWidth
-	const h = el.offsetHeight
+function slicerSet(){
 	
-	const w_ = w/3
-	TweenLite.set(`.${frame}.a`, {clip: `rect(0px,${w_}px,${h}px, ${(w_*1)-w_}px)`})
-	TweenLite.set(`.${frame}.b`, {clip: `rect(0px,${w_*2}px,${h}px,${(w_*2)-w_}px)`})
-	TweenLite.set(`.${frame}.c`, {clip: `rect(0px,${w_*3}px,${h}px,${(w_*3)-w_}px)`})
+	const h = size.h
+	const w = size.w/3
+	
+	TweenLite.set(`.f1.a`, {clip: `rect(0px,${w}px,${h}px, ${(w*1)-w}px)`})
+	TweenLite.set(`.f1.b`, {clip: `rect(0px,${w*2}px,${h}px,${(w*2)-w}px)`})
+	TweenLite.set(`.f1.c`, {clip: `rect(0px,${w*3}px,${h}px,${(w*3)-w}px)`})
+
+	const h_ = h * 2
+	const w_ = w * 2
+	console.log(w_, h_);
+	TweenLite.set(`.f2.a`, {clip: `rect(0px,${w_}px,${h_}px, ${(w_*1)-w_}px)`, y:-h})
+	TweenLite.set(`.f2.b`, {clip: `rect(0px,${w_*2}px,${h_}px,${(w_*2)-w_}px)`, y:-h})
+	TweenLite.set(`.f2.c`, {clip: `rect(0px,${w_*3}px,${h_}px,${(w_*3)-w_}px)`, y:-h})
 	
 }
 
@@ -33,12 +39,13 @@ function slicerTween(){
 	const tl = new TimelineMax()
 	tl.set([".f1", ".f2"], {opacity:1})
 	const time = 175 / size.h
+	// const time = 5
 	tl.to([".a"], time, {y:`+=${size.h}`}, 0)
 	tl.to([".b"], time, {y:`+=${size.h}`}, .2)
 	tl.to([".c"], time, {y:`+=${size.h}`}, .3)
 
 
-	tl.to(".shad", .5, {opacity:0})
+	tl.to(".shad", .5, {opacity:0}, "+=.15")
 	return tl
 }
 
@@ -46,8 +53,8 @@ function init(){
 	const tl = new TimelineMax()
 	tl.set(".frame1", {opacity:1})
 	setTimeout(()=>{
-		slicerSet('f1')
-		slicerSet('f2')
+		slicerSet()
+		// slicerSet('f2')
 	}, 2000)
 	return tl
 }

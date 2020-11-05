@@ -1,0 +1,29 @@
+
+
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/playnow.scss';
+
+
+
+.frame1 {
+	// opacity: 1;
+}
+
+.pot{
+
+	@include pos(0, 0);
+}
+
+.screen{
+	@include pos-scale(100, 11, .5);
+}
+
+
+
+#banner{
+	font-size: 20px;
+	color: #333;
+	width: 300px;
+	height: 250px;
+}
+

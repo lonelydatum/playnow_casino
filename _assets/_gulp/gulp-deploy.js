@@ -14,15 +14,14 @@ const zip           = require('gulp-zip');
 function deploy(projectName){
 	var entry = './dev/'+projectName+'/index.html';
 
-    gulp.src('./dev/'+projectName+'/images/**.*')
-    .pipe(gulp.dest('./docs/deploy/'+projectName));
+    
 
 
 	var stream =  gulp.src(entry)
         .pipe(replace("main.js", 'log-free.js'))
         .pipe(htmlmin({removeComments:true, collapseWhitespace:true, preserveLineBreaks:true}))
         
-        .pipe(inlinesource({compress:false, svgAsImage:true}))
+        .pipe(inlinesource({compress:true, svgAsImage:true}))
         .on('error', notify.onError({message:"<%= error.message %>", wait: false}))               
         .pipe(replace('data:image/svg+xml;utf8', 'data:image/svg+xml;charset=utf-8'))
         .pipe(replace('<script type="text/javascript" src="http://localhost:48626/takana.js"></script>', ''))
@@ -35,6 +34,10 @@ function deploy(projectName){
         return stream;
 }
 
+function moveImages(projectName){
+
+}
+
 
 function log_free(projectName){    
     var stream = gulp.src('./dev/'+projectName+'/_bundled/main.js')
@@ -44,8 +47,11 @@ function log_free(projectName){
             return file.base;
         }))
         
+    var stream2 =  gulp.src('./dev/'+projectName+'/images/**.*')
+    .pipe(gulp.dest('./docs/deploy/'+projectName));
+    
 
-        stream.on('end', function(){
+        stream2.on('end', function(){
             deploy(projectName).on("end", function(){
                 gulp.src('./docs/deploy/'+projectName+'/**',  { base : "./docs/deploy" })
                     .pipe(zip(projectName+'.zip'))
