@@ -1,5 +1,5 @@
 import {size, init, slicerTween, range} from '../../_common/js/common.js'
-
+import {data} from '../../_common/js/88.js'
 
 
 function start(){
@@ -14,7 +14,7 @@ function start(){
 
 	tl.from(".t1", .6, {opacity:0, y:"-=200", ease:Power3.easeOut})
 	
-	tl.to(".t1", .6, {opacity:0, y:"+=400", ease:Power3.easeOut}, 2.5)
+	tl.to(".t1", .6, {opacity:0, y:"+=400", ease:Power3.easeOut}, data.v1_t1)
 	
 	tl.from([".t2"], .5, {opacity:0, y:"-=200"}, "+=0" )
 	tl.from([".screen"], .5, {opacity:0, y:"-=100"}, "+=.1" )
@@ -25,7 +25,7 @@ function start(){
 	
 	
 
-	tl.add("end", "+=4")
+	tl.add("end", `+=${data.v1_t2}`)
 
 	tl.add(slicerTween(), "end")
 

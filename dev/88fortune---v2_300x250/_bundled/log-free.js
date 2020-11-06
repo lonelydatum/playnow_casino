@@ -1,7 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
+
+var _commonJs88Js = require('../../_common/js/88.js');
 
 function start() {
 
@@ -15,13 +17,13 @@ function start() {
 
 	tl.from(".pot", .4, { x: "-=300" });
 
-	tl.add("t1-out", 2.5);
+	tl.add("t1-out", _commonJs88Js.data.v2_t1);
 	tl.to(".t1", .6, { x: "+=300" }, "t1-out");
 	tl.to(".pot", .6, { x: 300, opacity: 0 }, "t1-out");
 	tl.from(".screen", .5, { x: "-=500" }, "t1-out+=.2");
 	tl.from(".t2", .5, { x: "-=400" }, "t1-out+=.4");
 
-	tl.add("end", "+=4");
+	tl.add("end", '+=' + _commonJs88Js.data.v1_t2);
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 
 	// tl.gotoAndPlay("f2")
@@ -31,7 +33,23 @@ start();
 
 module.exports = {};
 
-},{"../../_common/js/common.js":2}],2:[function(require,module,exports){
+},{"../../_common/js/88.js":2,"../../_common/js/common.js":3}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var data = {
+	v1_t1: 2.5,
+	v1_t2: 3.2,
+
+	v2_t1: 3.5,
+	v2_t2: 3
+};
+
+exports.data = data;
+
+},{}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

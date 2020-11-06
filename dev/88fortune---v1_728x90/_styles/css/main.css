@@ -448,7 +448,7 @@ sup {
 .shadMain .shad {
   width: 33.33333333333%;
   height: 100%;
-  box-shadow: inset 5px 0px 10px black;
+  box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.6);
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
@@ -478,9 +478,9 @@ sup {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transform: translate(0px, -100px) scale(0.4, 0.4);
-  -ms-transform: translate(0px, -100px) scale(0.4, 0.4);
-  transform: translate(0px, -100px) scale(0.4, 0.4);
+  -webkit-transform: translate(0px, -100px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, -100px) scale(0.5, 0.5);
+  transform: translate(0px, -100px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
