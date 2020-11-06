@@ -16,7 +16,7 @@ function start(){
 		"#take_2 .flip-card-inner",
 		"#take_3 .flip-card-inner",
 		"#take_4 .flip-card-inner",
-		"#null_1 .flip-card-inner",
+		"#anytime_5 .flip-card-inner",
 		"#it_1 .flip-card-inner",
 		"#it_2 .flip-card-inner",
 		"#for_1 .flip-card-inner",
@@ -29,9 +29,9 @@ function start(){
 		"#spin_4 .flip-card-inner",
 	]
 
-	
+	// return
 
-	TweenLite.to(".wheel", 2, {rotation:"+=500", ease:Power2.easeOut, delay: 3})
+	
 
 
 
@@ -47,6 +47,7 @@ function start(){
 
 	
 	tl.add(wof(list), 3)
+	tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
 	
 	
 	tl.add("end", "+=3")

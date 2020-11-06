@@ -8,8 +8,6 @@ function start(){
 	
 	
 	
-	
-	
 	const list = [	
 		"#how_1 .flip-card-inner", 
 		"#do_1 .flip-card-inner", 

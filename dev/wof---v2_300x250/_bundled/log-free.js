@@ -39,10 +39,13 @@ function range(min, max) {
 }
 
 function slicerTween() {
-
+	TweenLite.set(".shad", { opacity: 1 });
 	var tl = new TimelineMax();
 	tl.set([".f1", ".f2"], { opacity: 1 });
-	var time = 175 / size.h;
+
+	var time = size.h / 450;
+	time = Math.max(time, .4);
+
 	// const time = 5
 	tl.to([".a"], time, { y: '+=' + size.h }, 0);
 	tl.to([".b"], time, { y: '+=' + size.h }, .2);
@@ -55,6 +58,13 @@ function slicerTween() {
 function init() {
 	var tl = new TimelineMax();
 	tl.set(".frame1", { opacity: 1 });
+	var w_ = size.w / 3;
+	var y = -size.h;
+	tl.set(".shad1", { x: w_ * 0, y: y });
+	tl.set(".shad2", { x: w_ * 1, y: y });
+	tl.set(".shad3", { x: w_ * 2, y: y });
+
+	// tl.set(".shad", {opacity:0})
 	setTimeout(function () {
 		slicerSet();
 		// slicerSet('f2')
@@ -76,11 +86,12 @@ function start() {
 
 	var tl = (0, _commonJsCommonJs.init)();
 
-	var list = ["#take_1 .flip-card-inner", "#take_2 .flip-card-inner", "#take_3 .flip-card-inner", "#take_4 .flip-card-inner", "#null_1 .flip-card-inner", "#it_1 .flip-card-inner", "#it_2 .flip-card-inner", "#for_1 .flip-card-inner", "#for_2 .flip-card-inner", "#for_3 .flip-card-inner", "#a_1 .flip-card-inner", "#spin_1 .flip-card-inner", "#spin_2 .flip-card-inner", "#spin_3 .flip-card-inner", "#spin_4 .flip-card-inner"];
+	var list = ["#take_1 .flip-card-inner", "#take_2 .flip-card-inner", "#take_3 .flip-card-inner", "#take_4 .flip-card-inner", "#anytime_5 .flip-card-inner", "#it_1 .flip-card-inner", "#it_2 .flip-card-inner", "#for_1 .flip-card-inner", "#for_2 .flip-card-inner", "#for_3 .flip-card-inner", "#a_1 .flip-card-inner", "#spin_1 .flip-card-inner", "#spin_2 .flip-card-inner", "#spin_3 .flip-card-inner", "#spin_4 .flip-card-inner"];
 
-	TweenLite.to(".wheel", 2, { rotation: "+=500", ease: Power2.easeOut, delay: 3 });
+	// return
 
 	tl.add(wof(list), 3);
+	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
 
 	tl.add("end", "+=3");
 

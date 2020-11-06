@@ -35,10 +35,13 @@ function range(min, max) {
 }
 
 function slicerTween(){
-
+	TweenLite.set(".shad", {opacity:1})
 	const tl = new TimelineMax()
 	tl.set([".f1", ".f2"], {opacity:1})
-	const time = 175 / size.h
+
+	let time = size.h / 450
+	time = Math.max(time, .4)
+	
 	// const time = 5
 	tl.to([".a"], time, {y:`+=${size.h}`}, 0)
 	tl.to([".b"], time, {y:`+=${size.h}`}, .2)
@@ -52,6 +55,13 @@ function slicerTween(){
 function init(){
 	const tl = new TimelineMax()
 	tl.set(".frame1", {opacity:1})
+	const w_ = size.w/3
+	const y = -size.h
+	tl.set(".shad1", {x:w_*0, y})
+	tl.set(".shad2", {x:w_*1, y})
+	tl.set(".shad3", {x:w_*2, y})
+
+	// tl.set(".shad", {opacity:0})
 	setTimeout(()=>{
 		slicerSet()
 		// slicerSet('f2')

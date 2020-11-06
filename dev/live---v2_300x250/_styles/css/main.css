@@ -448,35 +448,10 @@ sup {
 .shadMain .shad {
   width: 33.33333333333%;
   height: 100%;
-  box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.6);
-}
-
-.shadMain .shad1 {
-  -webkit-transform: translate(0%, -100%);
-  -ms-transform: translate(0%, -100%);
-  transform: translate(0%, -100%);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.shadMain .shad2 {
-  -webkit-transform: translate(100%, -100%);
-  -ms-transform: translate(100%, -100%);
-  transform: translate(100%, -100%);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.shadMain .shad3 {
-  -webkit-transform: translate(200%, -100%);
-  -ms-transform: translate(200%, -100%);
-  transform: translate(200%, -100%);
+  box-shadow: inset 5px 0px 10px black;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -488,17 +463,6 @@ sup {
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.f2 {
-  -webkit-transform: translate(0%, -50%) scale(0.5, 0.5);
-  -ms-transform: translate(0%, -50%) scale(0.5, 0.5);
-  transform: translate(0%, -50%) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

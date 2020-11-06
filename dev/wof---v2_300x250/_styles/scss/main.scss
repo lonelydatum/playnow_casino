@@ -2,6 +2,7 @@
 
 @import '../../../_common/styles/common.scss';
 @import '../../../_common/styles/playnow.scss';
+@import '../../../_common/styles/type_wof.scss';
 
 #take_1{ @include pos(24, 64); }
 #take_2{ @include pos(57, 64); }
@@ -9,7 +10,7 @@
 #take_4{ @include pos(123, 64); }
 
 
-#null_1{ @include pos(155, 64); }
+#anytime_5{ @include pos(155, 64); }
 
 
 
@@ -39,10 +40,7 @@
 	// opacity: 1;
 }
 
-.wheel{
-  transform-origin: 50% 50%;
-  @include pos-scale(100, 45, .5);
-}
+
 
 
 #banner{
@@ -54,39 +52,8 @@
 
 
 
-.flip-card {
-  @include pos(0, 0);
-  background-color: transparent;
+.flip-card, .flip-card-back {
   width: 28px;
-  height: 40px;
-  perspective: 1000px;
+  height: 40px;  
 }
 
-.flip-card-inner {
-  // transform: rotateY(180deg);
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  // transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  
-
-}
-
-.flip-card-back {  
-  transform: rotateY(180deg);
-}
