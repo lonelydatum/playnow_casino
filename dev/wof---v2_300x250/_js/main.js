@@ -1,5 +1,5 @@
 import {size, init, slicerTween} from '../../_common/js/common.js'
-
+import {time_v2} from '../../_common/js/wof.js'
 
 
 function start(){
@@ -50,7 +50,7 @@ function start(){
 	tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
 	
 	
-	tl.add("end", "+=3")
+	tl.add("end", `+=${time_v2}`)
 
 	tl.add(slicerTween(), "end")
 

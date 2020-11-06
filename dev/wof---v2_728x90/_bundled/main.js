@@ -80,7 +80,21 @@ exports.init = init;
 },{}],2:[function(require,module,exports){
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var time_v1 = 1;
+var time_v2 = 1;
+exports.time_v1 = time_v1;
+exports.time_v2 = time_v2;
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
 var _commonJsCommonJs = require('../../_common/js/common.js');
+
+var _commonJsWofJs = require('../../_common/js/wof.js');
 
 function start() {
 
@@ -94,7 +108,7 @@ function start() {
 
 	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
 
-	tl.add("end", "+=3");
+	tl.add("end", '+=' + _commonJsWofJs.time_v2);
 
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 }
@@ -112,7 +126,7 @@ start();
 
 module.exports = {};
 
-},{"../../_common/js/common.js":1}]},{},[2])
+},{"../../_common/js/common.js":1,"../../_common/js/wof.js":2}]},{},[3])
 
 
 //# sourceMappingURL=main.js.map
