@@ -581,9 +581,9 @@ sup {
 }
 
 #fun_1 {
-  -webkit-transform: translate(55px, 223px);
-  -ms-transform: translate(55px, 223px);
-  transform: translate(55px, 223px);
+  -webkit-transform: translate(55px, 222px);
+  -ms-transform: translate(55px, 222px);
+  transform: translate(55px, 222px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

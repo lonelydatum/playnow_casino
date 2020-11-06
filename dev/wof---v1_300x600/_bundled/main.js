@@ -102,10 +102,12 @@ function start() {
 
 	var list = ["#how_1 .flip-card-inner", "#do_1 .flip-card-inner", "#you_1 .flip-card-inner", "#you_2 .flip-card-inner", "#spell_1 .flip-card-inner", "#fun_1 .flip-card-inner"];
 
+	// return
+
 	tl.add(wof(list), 1);
 	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
 
-	tl.add("end", '+=' + time_v1);
+	tl.add("end", '+=' + _commonJsWofJs.time_v1);
 
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 }
