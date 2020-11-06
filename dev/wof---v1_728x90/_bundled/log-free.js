@@ -108,7 +108,7 @@ function start() {
 
 	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
 
-	tl.add("end", '+=' + time_v1);
+	tl.add("end", '+=' + _commonJsWofJs.time_v1);
 
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 }

@@ -1,5 +1,5 @@
 import {size, init, slicerTween} from '../../_common/js/common.js'
-import {time} from '../../_common/js/wof.js'
+import {time_v1} from '../../_common/js/wof.js'
 
 
 function start(){
