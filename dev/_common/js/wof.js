@@ -8,7 +8,7 @@ const time_v1 = 1
 function wof_v2(list){
 
 	const tl = init()
-	tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut}, 3)
+	tl.to(".wheel", 2, {rotation:"-=500", ease:Back.easeInOut}, 3)
 	tl.add(flip(list), "-=.3")
 	
 	
@@ -24,7 +24,7 @@ function wof_v1(list){
 
 	const tl = init()
 	tl.add(flip(list), 1)
-	tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
+	tl.to(".wheel", 2, {rotation:"-=500", ease:Back.easeInOut})
 	
 	
 
