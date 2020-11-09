@@ -474,42 +474,13 @@ sup {
   opacity: 0;
 }
 
-.wiper {
-  -webkit-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: .4s ease-out;
-  -webkit-clip-path: polygon(400px 0px, 900px 0px, 900px 250px, 300px 250px);
-  clip-path: polygon(400px 0px, 900px 0px, 900px 250px, 300px 250px);
-}
-
-.wiperOn {
-  -webkit-clip-path: polygon(0px 0px, 300px 0px, 300px 250px, -100px 250px);
-  clip-path: polygon(0px 0px, 300px 0px, 300px 250px, -100px 250px);
-}
-
-.line {
-  -webkit-transform: translate(100px, 0px);
-  -ms-transform: translate(100px, 0px);
-  transform: translate(100px, 0px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.lineOn {
-  -webkit-transform: translate(-300px, 0px);
-  -ms-transform: translate(-300px, 0px);
-  transform: translate(-300px, 0px);
+.bg2 {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(-150px, -125px) scale(0.43, 0.43);
+  -ms-transform: translate(-150px, -125px) scale(0.43, 0.43);
+  transform: translate(-150px, -125px) scale(0.43, 0.43);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
