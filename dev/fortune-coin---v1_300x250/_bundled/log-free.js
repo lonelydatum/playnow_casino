@@ -72,6 +72,23 @@ function init() {
 	return tl;
 }
 
+function coinItem(id, x, repeat) {
+	var tl = new TimelineMax({ repeat: repeat });
+	var delay = range(0, .8);
+	// const time = range(.5, .8)	
+	tl.set(id, { x: x, y: -100 });
+	var height = size.h;
+	var time = height / 500;
+
+	time = Math.max(time, .7);
+	time = Math.min(time, 1);
+	void 0;
+	// tl.set(id, {scale:range(.25, .5)})
+	tl.to(id, time, { y: height, rotation: '+=500}', ease: Power1.easeIn });
+	return tl;
+}
+
+exports.coinItem = coinItem;
 exports.size = size;
 exports.range = range;
 exports.slicerTween = slicerTween;

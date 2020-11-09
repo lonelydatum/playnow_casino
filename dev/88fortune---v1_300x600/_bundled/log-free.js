@@ -30,29 +30,29 @@ function start() {
 
 function group1() {
 	var tl = new TimelineMax();
-	tl.add(coinItem(".coin_a", -60, 3), 0);
-	tl.add(coinItem(".coin_b", -30, 3), .2);
-	tl.add(coinItem(".coin_c", 210, 3), .1);
-	tl.add(coinItem(".coin_d", 230, 3), .4);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 3), .2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 210, 3), .1);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .4);
 }
 
 function group2() {
 	var tl = new TimelineMax();
 	tl.add("t2", 3.2);
-	tl.add(coinItem(".coin_a", 0, 0), "t2+=.1");
-	tl.add(coinItem(".coin_b", 80, 0), "t2+=.2");
-	tl.add(coinItem(".coin_c", 150, 0), "t2+=.3");
-	tl.add(coinItem(".coin_d", 200, 0), "t2+=.4");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 0, 0), "t2+=.1");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 80, 0), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 150, 0), "t2+=.3");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 200, 0), "t2+=.4");
 }
 
-function coinItem(id, x, repeat) {
-	var tl = new TimelineMax({ repeat: repeat });
-	var delay = (0, _commonJsCommonJs.range)(0, .8);
-	var time = (0, _commonJsCommonJs.range)(.5, .8);
-	tl.set(id, { x: x, y: -100 });
-	tl.to(id, 1, { y: "+=700", rotation: "+=190", ease: Power1.easeIn });
-	return tl;
-}
+// function coinItem(id, x, repeat){
+// 	const tl = new TimelineMax({repeat:repeat})	
+// 	const delay = range(0, .8)
+// 	const time = range(.5, .8)	
+// 	tl.set(id,  {x, y:-100})
+// 	tl.to(id, 1, {y:"+=700", rotation:"+=190",ease:Power1.easeIn})
+// 	return tl
+// }
 
 start();
 
@@ -148,6 +148,23 @@ function init() {
 	return tl;
 }
 
+function coinItem(id, x, repeat) {
+	var tl = new TimelineMax({ repeat: repeat });
+	var delay = range(0, .8);
+	// const time = range(.5, .8)	
+	tl.set(id, { x: x, y: -100 });
+	var height = size.h;
+	var time = height / 500;
+
+	time = Math.max(time, .7);
+	time = Math.min(time, 1);
+	void 0;
+	// tl.set(id, {scale:range(.25, .5)})
+	tl.to(id, time, { y: height, rotation: '+=500}', ease: Power1.easeIn });
+	return tl;
+}
+
+exports.coinItem = coinItem;
 exports.size = size;
 exports.range = range;
 exports.slicerTween = slicerTween;

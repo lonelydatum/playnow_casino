@@ -14,6 +14,10 @@
 	@include pos-scale(0, -100, .25);
 }
 
+.coin_b{	
+	@include pos-scale(0, -100, .2);
+}
+
 
 .mask{
 	width: 100%;

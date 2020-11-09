@@ -1,4 +1,4 @@
-import {size, init, slicerTween, range} from '../../_common/js/common.js'
+import {size, init, slicerTween, range, coinItem} from '../../_common/js/common.js'
 import {data} from '../../_common/js/88.js'
 
 
@@ -52,14 +52,14 @@ function group2(){
 	// tl.add(coinItem(".coin_d", 200, 0), "t2+=.4")
 }
 
-function coinItem(id, x, repeat){
-	const tl = new TimelineMax({repeat:repeat})	
-	const delay = range(0, .8)
-	const time = range(.5, .8)	
-	tl.set(id,  {x, y:-100})
-	tl.to(id, 1.5, {y:"+=700", rotation:"+=190",ease:Power1.easeIn})
-	return tl
-}
+// function coinItem(id, x, repeat){
+// 	const tl = new TimelineMax({repeat:repeat})	
+// 	const delay = range(0, .8)
+// 	const time = range(.5, .8)	
+// 	tl.set(id,  {x, y:-100})
+// 	tl.to(id, 1.5, {y:"+=700", rotation:"+=190",ease:Power1.easeIn})
+// 	return tl
+// }
 
 start()
 

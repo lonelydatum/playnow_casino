@@ -11,9 +11,13 @@
 
 .coin{
 	transform-origin: 50% 50%;
-	@include pos-scale(0, -100, .5);
+	@include pos-scale(0, -100, .3);
 }
 
+
+.coin_b{	
+	@include pos-scale(0, -100, .4);
+}
 
 .mask{
 	width: 100%;

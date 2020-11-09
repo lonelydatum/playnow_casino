@@ -1,4 +1,4 @@
-import {size, init, slicerTween, range} from '../../_common/js/common.js'
+import {size, init, slicerTween, range, coinItem} from '../../_common/js/common.js'
 import {data} from '../../_common/js/88.js'
 
 
