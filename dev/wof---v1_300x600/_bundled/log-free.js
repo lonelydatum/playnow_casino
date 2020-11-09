@@ -84,17 +84,47 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var time_v1 = 1;
-var time_v2 = 1;
-exports.time_v1 = time_v1;
-exports.time_v2 = time_v2;
+var _commonJs = require('./common.js');
 
-},{}],3:[function(require,module,exports){
-'use strict';
+var time_v1 = 1;
+
+function wof_v2(list) {
+
+	var tl = (0, _commonJs.init)();
+	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut }, 3);
+	tl.add(flip(list), "-=.3");
+
+	tl.add("end", "+=2.2");
+
+	tl.add((0, _commonJs.slicerTween)(), "end");
+}
+
+function wof_v1(list) {
+
+	var tl = (0, _commonJs.init)();
+	tl.add(flip(list), 1);
+	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
+
+	tl.add((0, _commonJs.slicerTween)(), "+=1");
+}
+
+function flip(list) {
+	var tl = new TimelineMax();
+	for (var i = 0; i < list.length; i++) {
+		tl.to(list[i], .3, { rotationY: "+=180" }, "-=.21");
+	}
+
+	return tl;
+}
+
+exports.wof_v1 = wof_v1;
+exports.wof_v2 = wof_v2;
+exports.time_v1 = time_v1;
+
+},{"./common.js":1}],3:[function(require,module,exports){
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
-
-var _commonJsWofJs = require('../../_common/js/wof.js');
 
 function start() {
 
@@ -102,23 +132,11 @@ function start() {
 
 	var list = ["#how_1 .flip-card-inner", "#do_1 .flip-card-inner", "#you_1 .flip-card-inner", "#you_2 .flip-card-inner", "#spell_1 .flip-card-inner", "#fun_1 .flip-card-inner"];
 
-	// return
+	var _require = require('../../_common/js/wof.js');
 
-	tl.add(wof(list), 1);
-	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
+	var wof_v1 = _require.wof_v1;
 
-	tl.add("end", '+=' + _commonJsWofJs.time_v1);
-
-	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
-}
-
-function wof(list) {
-	var tl = new TimelineMax();
-	for (var i = 0; i < list.length; i++) {
-		tl.to(list[i], .3, { rotationY: "+=180" }, "-=.15");
-	}
-
-	return tl;
+	wof_v1(list);
 }
 
 start();

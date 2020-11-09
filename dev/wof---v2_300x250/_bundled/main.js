@@ -84,41 +84,68 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _commonJs = require('./common.js');
+
 var time_v1 = 1;
-var time_v2 = 1;
-exports.time_v1 = time_v1;
-exports.time_v2 = time_v2;
 
-},{}],3:[function(require,module,exports){
-'use strict';
+function wof_v2(list) {
 
-var _commonJsCommonJs = require('../../_common/js/common.js');
+	var tl = (0, _commonJs.init)();
+	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut }, 3);
+	tl.add(flip(list), "-=.3");
 
-var _commonJsWofJs = require('../../_common/js/wof.js');
+	tl.add("end", "+=2.2");
 
-function start() {
-
-	var tl = (0, _commonJsCommonJs.init)();
-
-	var list = ["#take_1 .flip-card-inner", "#take_2 .flip-card-inner", "#take_3 .flip-card-inner", "#take_4 .flip-card-inner", "#anytime_5 .flip-card-inner", "#it_1 .flip-card-inner", "#it_2 .flip-card-inner", "#for_1 .flip-card-inner", "#for_2 .flip-card-inner", "#for_3 .flip-card-inner", "#a_1 .flip-card-inner", "#spin_1 .flip-card-inner", "#spin_2 .flip-card-inner", "#spin_3 .flip-card-inner", "#spin_4 .flip-card-inner"];
-
-	// return
-
-	tl.add(wof(list), 3);
-	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
-
-	tl.add("end", '+=' + _commonJsWofJs.time_v2);
-
-	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
+	tl.add((0, _commonJs.slicerTween)(), "end");
 }
 
-function wof(list) {
+function wof_v1(list) {
+
+	var tl = (0, _commonJs.init)();
+	tl.add(flip(list), 1);
+	tl.to(".wheel", 2, { rotation: "+=500", ease: Back.easeInOut });
+
+	tl.add((0, _commonJs.slicerTween)(), "+=1");
+}
+
+function flip(list) {
 	var tl = new TimelineMax();
 	for (var i = 0; i < list.length; i++) {
 		tl.to(list[i], .3, { rotationY: "+=180" }, "-=.21");
 	}
 
 	return tl;
+}
+
+exports.wof_v1 = wof_v1;
+exports.wof_v2 = wof_v2;
+exports.time_v1 = time_v1;
+
+},{"./common.js":1}],3:[function(require,module,exports){
+"use strict";
+
+var _commonJsCommonJs = require('../../_common/js/common.js');
+
+// import {time_v2} from '../../_common/js/wof.js'
+
+function start() {
+
+	var list = ["#take_1 .flip-card-inner", "#take_2 .flip-card-inner", "#take_3 .flip-card-inner", "#take_4 .flip-card-inner", "#anytime_5 .flip-card-inner", "#it_1 .flip-card-inner", "#it_2 .flip-card-inner", "#for_1 .flip-card-inner", "#for_2 .flip-card-inner", "#for_3 .flip-card-inner", "#a_1 .flip-card-inner", "#spin_1 .flip-card-inner", "#spin_2 .flip-card-inner", "#spin_3 .flip-card-inner", "#spin_4 .flip-card-inner"];
+
+	// return
+
+	var _require = require('../../_common/js/wof.js');
+
+	var wof_v2 = _require.wof_v2;
+
+	wof_v2(list);
+
+	// tl.add(wof(list), 3)
+	// tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
+
+	// tl.add("end", `+=${time_v2}`)
+
+	// tl.add(slicerTween(), "end")
 }
 
 start();

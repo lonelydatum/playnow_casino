@@ -1,10 +1,10 @@
 import {size, init, slicerTween} from '../../_common/js/common.js'
-import {time_v2} from '../../_common/js/wof.js'
+// import {time_v2} from '../../_common/js/wof.js'
 
 
 function start(){
 	
-	const tl = init()
+	
 	
 	
 	
@@ -38,6 +38,8 @@ function start(){
 
 
 
+	const {wof_v2} = require('../../_common/js/wof.js')
+	wof_v2(list)
 
 
 
@@ -52,8 +54,7 @@ function start(){
 
 
 
-
-	// return
+	// // return
 	
 	
 	
@@ -71,27 +72,19 @@ function start(){
 
 
 	
-	tl.add(wof(list), 3)
+	// tl.add(wof(list), 3)
 
-	tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
+	// tl.to(".wheel", 2, {rotation:"+=500", ease:Back.easeInOut})
 	
 	
-	tl.add("end", `+=${time_v2}`)
+	// tl.add("end", `+=${time_v2}`)
 
-	tl.add(slicerTween(), "end")
+	// tl.add(slicerTween(), "end")
 
 	
 		
 }
 
-function wof(list){
-	const tl = new TimelineMax()
-	for(let i=0; i<list.length; i++){
-		tl.to(list[i], .3, {rotationY:"+=180"}, "-=.21");
-	}
-
-	return tl
-}
 
 start()
 

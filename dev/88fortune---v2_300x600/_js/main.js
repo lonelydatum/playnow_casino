@@ -10,7 +10,7 @@ function start(){
 	
 
 	group1()	
-	group2()
+	// group2()
 	
 
 	tl.from(".t1", .6, {opacity:0, y:"-=200", ease:Power3.easeOut})
@@ -38,10 +38,10 @@ function start(){
 
 function group1(){
 	const tl = new TimelineMax()
-	tl.add(coinItem(".coin_a", -30, 3), 0)
-	tl.add(coinItem(".coin_b", -60, 3), .2)
-	tl.add(coinItem(".coin_c", 220, 3), .3)
-	tl.add(coinItem(".coin_d", 240, 3), .6)
+	tl.add(coinItem(".coin_a", -30, 5), 0)
+	tl.add(coinItem(".coin_b", -60, 5), .2)
+	tl.add(coinItem(".coin_c", 220, 5), .3)
+	tl.add(coinItem(".coin_d", 240, 5), .6)
 }
 
 function group2(){

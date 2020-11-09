@@ -1,10 +1,10 @@
 import {size, init, slicerTween} from '../../_common/js/common.js'
-import {time_v1} from '../../_common/js/wof.js'
+
 
 
 function start(){
 	
-	const tl = init()
+	
 	
 	
 	
@@ -21,14 +21,8 @@ function start(){
 	]
 
 	
-
-	
-	tl.add(wof(list), 1)
-	
-	
-	tl.add("end", `+=${time_v1}`)
-
-	tl.add(slicerTween(), "end")
+	const {wof_v1} = require('../../_common/js/wof.js')
+	wof_v1(list)
 
 	
 		

@@ -603,9 +603,9 @@ sup {
 }
 
 #exite_1 {
-  -webkit-transform: translate(110px, 25px);
-  -ms-transform: translate(110px, 25px);
-  transform: translate(110px, 25px);
+  -webkit-transform: translate(109px, 25px);
+  -ms-transform: translate(109px, 25px);
+  transform: translate(109px, 25px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -614,9 +614,9 @@ sup {
 }
 
 #exite_2 {
-  -webkit-transform: translate(155px, 25px);
-  -ms-transform: translate(155px, 25px);
-  transform: translate(155px, 25px);
+  -webkit-transform: translate(154px, 25px);
+  -ms-transform: translate(154px, 25px);
+  transform: translate(154px, 25px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -636,9 +636,9 @@ sup {
 }
 
 #exite_4 {
-  -webkit-transform: translate(215px, 25px);
-  -ms-transform: translate(215px, 25px);
-  transform: translate(215px, 25px);
+  -webkit-transform: translate(214px, 25px);
+  -ms-transform: translate(214px, 25px);
+  transform: translate(214px, 25px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -670,7 +670,7 @@ sup {
 
 .flip-card, .flip-card-back {
   width: 14px;
-  height: 20px;
+  height: 21px;
 }
 
 /*# sourceMappingURL=main.css.map */
