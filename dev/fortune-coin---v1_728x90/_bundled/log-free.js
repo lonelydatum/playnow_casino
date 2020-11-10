@@ -178,13 +178,6 @@ function group1() {
 	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 600, 5), "t2+=.4");
 }
 
-function group2() {
-	var tl = new TimelineMax();
-	tl.add("t2", 3.2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 380, 2), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 440, 2), "t2+=.2");
-}
-
 start();
 
 module.exports = {};

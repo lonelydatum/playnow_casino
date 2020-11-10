@@ -164,15 +164,18 @@ var _commonJsCoinJs = require('../../_common/js/coin.js');
 function start() {
 
 	group1();
-	(0, _commonJsCoinJs.coin_v2)(.4);
+	// group2()
+
+	(0, _commonJsCoinJs.coin_v1)(.35);
 }
 
 function group1() {
 	var tl = new TimelineMax();
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 3), .2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 210, 3), .1);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .4);
+
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 300, 5), "t2+=.1");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 400, 5), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 500, 5), "t2+=.3");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 600, 5), "t2+=.4");
 }
 
 start();
