@@ -13,10 +13,10 @@ function start(){
 
 function group1(){
 	const tl = new TimelineMax()
-	tl.add(coinItem(".coin_a", -60, 5), 0)
-	tl.add(coinItem(".coin_b", -30, 5), .2)
-	tl.add(coinItem(".coin_c", 210, 5), .1)
-	tl.add(coinItem(".coin_d", 230, 5), .4)
+	tl.add(coinItem(".coin_a", -60, 6), 0)
+	tl.add(coinItem(".coin_b", -30, 6), .2)
+	tl.add(coinItem(".coin_c", 210, 6), .1)
+	tl.add(coinItem(".coin_d", 230, 6), .4)
 }
 
 start()
