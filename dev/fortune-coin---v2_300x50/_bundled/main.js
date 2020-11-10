@@ -133,6 +133,7 @@ function init() {
 }
 
 function coinItem(id, x, repeat) {
+	console.log(repeat);
 	var tl = new TimelineMax({ repeat: repeat });
 	var delay = range(0, .8);
 	// const time = range(.5, .8)	
@@ -142,7 +143,7 @@ function coinItem(id, x, repeat) {
 
 	time = Math.max(time, .7);
 	time = Math.min(time, 1);
-	console.log(height, time);
+
 	// tl.set(id, {scale:range(.25, .5)})
 	tl.to(id, time, { y: height, rotation: '+=500}', ease: Power1.easeIn });
 	return tl;
@@ -169,10 +170,10 @@ function start() {
 
 function group1() {
 	var tl = new TimelineMax();
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 3), .2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 210, 3), .1);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .4);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 6), 0);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 6), .2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 210, 6), .1);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 6), .4);
 }
 
 start();

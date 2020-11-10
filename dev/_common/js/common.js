@@ -70,6 +70,7 @@ function init(){
 }
 
 function coinItem(id, x, repeat){
+	console.log(repeat);
 	const tl = new TimelineMax({repeat:repeat})	
 	const delay = range(0, .8)
 	// const time = range(.5, .8)	
@@ -79,7 +80,7 @@ function coinItem(id, x, repeat){
 	
 	time = Math.max(time, .7)
 	time = Math.min(time, 1)
-	console.log(height, time);
+	
 	// tl.set(id, {scale:range(.25, .5)})
 	tl.to(id, time, {y:height, rotation:`+=500}`,ease:Power1.easeIn})
 	return tl
