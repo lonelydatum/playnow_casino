@@ -8,12 +8,11 @@ Object.defineProperty(exports, "__esModule", {
 var _commonJs = require('./common.js');
 
 function coin_v1() {
+	var speed = arguments.length <= 0 || arguments[0] === undefined ? .7 : arguments[0];
 
 	var tl = (0, _commonJs.init)();
 
 	TweenLite.defaultEase = Power3.easeOut;
-
-	var speed = .7;
 
 	tl.from(".t1", .4, { opacity: 0 }, "+=.3");
 

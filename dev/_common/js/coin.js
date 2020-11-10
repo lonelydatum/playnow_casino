@@ -1,12 +1,12 @@
 import {size, init, slicerTween, range, coinItem} from './common.js'
 
-function coin_v1(){
+function coin_v1(speed=.7){
 	
 	const tl = init()
 	
 	TweenLite.defaultEase = Power3.easeOut
 
-	const speed = .7
+	
 	
 	
 
