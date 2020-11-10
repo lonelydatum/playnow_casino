@@ -478,14 +478,6 @@ sup {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transform: translate(-150px, -125px) scale(0.43, 0.43);
-  -ms-transform: translate(-150px, -125px) scale(0.43, 0.43);
-  transform: translate(-150px, -125px) scale(0.43, 0.43);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
 }
 
 #banner {
