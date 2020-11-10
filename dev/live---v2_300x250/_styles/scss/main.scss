@@ -9,29 +9,13 @@
 	// opacity: 1;
 }
 
-.wiper{
-	@include pos(0, 0);
-	width: 100%;
-	height: 100%;
-	transition: .4s ease-out;
-	clip-path: polygon(400px 0px, 900px 0px, 900px 250px, 300px 250px);	
+
+
+
+.bg2{
+	transform-origin: 50% 50%;
+	// @include pos-scale(-150, -125, .43);
 }
-
-
-.wiperOn{
-	clip-path: polygon(0px 0px, 300px 0px, 300px 250px, -100px 250px);
-}
-
-.line{	
-	@include pos(100, 0);
-}
-
-.lineOn{
-	@include pos(-300, 0);
-}
-
-
-
 
 #banner{
 	font-size: 20px;

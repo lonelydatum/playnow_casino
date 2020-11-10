@@ -134,11 +134,39 @@ function live_1_landscape() {
 	tl.to(".bg2", .3, { y: -_commonJs.size.h * .5, ease: Power4.easeOut }, "+=.1");
 	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
 	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
-
 	tl.add((0, _commonJs.slicerTween)(), "+=4");
 }
 
+function live_2_landscape() {
+
+	var tl = (0, _commonJs.init)();
+	tl.set(".bg2", { x: -_commonJs.size.w * .5, y: _commonJs.size.h, scale: .43 });
+
+	tl.from(".t1", .3, { opacity: 0 }, "+=.3");
+
+	tl.from(".gold", .3, { y: _commonJs.size.h, ease: Power4.easeOut }, "+=2");
+	tl.to(".bg2", .3, { y: -_commonJs.size.h * .5, ease: Power4.easeOut }, "+=.1");
+	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
+	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
+	tl.add((0, _commonJs.slicerTween)(), "+=2");
+}
+
+function live_2() {
+
+	var tl = (0, _commonJs.init)();
+	tl.set(".bg2", { x: _commonJs.size.w, y: -_commonJs.size.h * .5, scale: .43 });
+	tl.from(".t1", .3, { opacity: 0 }, "+=.3");
+
+	tl.from(".gold", .3, { x: _commonJs.size.w, ease: Power4.easeOut }, "+=3");
+	tl.to(".bg2", .3, { x: -_commonJs.size.w * .5, ease: Power4.easeOut }, "+=.1");
+	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
+	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
+	tl.add((0, _commonJs.slicerTween)(), "+=2");
+}
+
+exports.live_2 = live_2;
 exports.live_1 = live_1;
+exports.live_2_landscape = live_2_landscape;
 exports.live_1_landscape = live_1_landscape;
 
 },{"./common.js":1}],3:[function(require,module,exports){
