@@ -13,19 +13,10 @@ function start(){
 
 function group1(){
 	const tl = new TimelineMax()
-	
-	tl.add(coinItem(".coin_a", 300, 5), "t2+=.1")
-	tl.add(coinItem(".coin_b", 400, 5), "t2+=.2")
-	tl.add(coinItem(".coin_c", 500, 5), "t2+=.3")
-	tl.add(coinItem(".coin_d", 600, 5), "t2+=.4")
-}
-
-function group2(){
-	const tl = new TimelineMax()
-	tl.add("t2", 3.2)
-	tl.add(coinItem(".coin_a", 380, 2), "t2+=.1")
-	tl.add(coinItem(".coin_b", 440, 2), "t2+=.2")
-	
+	tl.add(coinItem(".coin_a", -60, 3), 0)
+	tl.add(coinItem(".coin_b", -30, 3), .2)
+	tl.add(coinItem(".coin_c", 210, 3), .1)
+	tl.add(coinItem(".coin_d", 230, 3), .4)
 }
 
 

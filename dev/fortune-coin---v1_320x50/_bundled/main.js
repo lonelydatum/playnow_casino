@@ -27,7 +27,36 @@ function coin_v1() {
 	tl.add((0, _commonJs.slicerTween)(), "+=3");
 }
 
+function coin_v2() {
+	var speed = arguments.length <= 0 || arguments[0] === undefined ? .7 : arguments[0];
+
+	var tl = (0, _commonJs.init)();
+
+	TweenLite.defaultEase = Power3.easeOut;
+
+	tl.from(".t1", .2, { y: "-=100", opacity: 0 }, "+=.3");
+
+	tl.add("t1-out", "+=2.7");
+
+	tl.to(".dragon", speed, { opacity: 0, y: "+=" + _commonJs.size.h }, "t1-out");
+	tl.to(".t1", speed, { opacity: 0, y: "+=" + _commonJs.size.h }, "t1-out");
+
+	// tl.add("t2-in")
+
+	tl.from(".screen", speed, { opacity: 0, y: "-=" + _commonJs.size.h }, "t1-out");
+	tl.from(".dragon2", speed, { opacity: 0, y: "-=" + _commonJs.size.h }, "t1-out+=.2");
+
+	tl.from(".t2", speed, { opacity: 0, y: "-=" + _commonJs.size.h }, "t1-out+=.4");
+
+	tl.add("end", "+=3");
+
+	tl.add((0, _commonJs.slicerTween)(), "end");
+
+	// tl.gotoAndPlay("f2")
+}
+
 exports.coin_v1 = coin_v1;
+exports.coin_v2 = coin_v2;
 
 },{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
@@ -142,18 +171,10 @@ function start() {
 
 function group1() {
 	var tl = new TimelineMax();
-
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 300, 5), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 400, 5), "t2+=.2");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 500, 5), "t2+=.3");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 600, 5), "t2+=.4");
-}
-
-function group2() {
-	var tl = new TimelineMax();
-	tl.add("t2", 3.2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 380, 2), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 440, 2), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 3), .2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 210, 3), .1);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .4);
 }
 
 start();

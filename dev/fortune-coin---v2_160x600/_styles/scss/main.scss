@@ -1,0 +1,47 @@
+
+
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/playnow.scss';
+
+
+
+.frame1 {
+	// opacity: 1;
+}
+
+.coin{
+	transform-origin: 50% 50%;
+	@include pos-scale(0, -100, .5);
+}
+
+
+.screen{	
+	// @include pos-scale(113, 28, .5);
+}
+
+.dragon2{	
+	// @include pos-scale(186, 106, .5);
+}
+
+
+.coin_a{	
+	@include pos-scale(0, -100, .3);
+}
+
+.coin_b{	
+	@include pos-scale(0, -100, .4);
+}
+
+.coin_c{	
+	@include pos-scale(0, -100, .25);
+}
+
+
+
+#banner{
+	font-size: 20px;
+	color: #333;
+	width: 160px;
+	height: 600px;
+}
+
