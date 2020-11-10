@@ -108,6 +108,7 @@ var time_v1 = 1;
 function live_1() {
 
 	var tl = (0, _commonJs.init)();
+	// tl.set(".bg2", {x:-size.w*.5, y:size.h, scale:.43 })
 	tl.set(".bg2", { x: _commonJs.size.w, y: -_commonJs.size.h * .5, scale: .43 });
 
 	tl.from(".t1a", .3, { opacity: 0 }, "+=.3");
@@ -121,7 +122,24 @@ function live_1() {
 	tl.add((0, _commonJs.slicerTween)(), "+=4");
 }
 
+function live_1_landscape() {
+
+	var tl = (0, _commonJs.init)();
+	tl.set(".bg2", { x: -_commonJs.size.w * .5, y: _commonJs.size.h, scale: .43 });
+
+	tl.from(".t1a", .3, { opacity: 0 }, "+=.3");
+	tl.from(".t1b", .3, { opacity: 0 }, "+=.5");
+
+	tl.from(".gold", .3, { y: _commonJs.size.h, ease: Power4.easeOut }, "+=2");
+	tl.to(".bg2", .3, { y: -_commonJs.size.h * .5, ease: Power4.easeOut }, "+=.1");
+	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
+	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
+
+	tl.add((0, _commonJs.slicerTween)(), "+=4");
+}
+
 exports.live_1 = live_1;
+exports.live_1_landscape = live_1_landscape;
 
 },{"./common.js":1}],3:[function(require,module,exports){
 'use strict';

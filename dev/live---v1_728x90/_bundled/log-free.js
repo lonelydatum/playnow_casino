@@ -97,31 +97,62 @@ exports.init = init;
 },{}],2:[function(require,module,exports){
 "use strict";
 
-var _commonJsCommonJs = require('../../_common/js/common.js');
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-// import {live_1} from '../../_common/js/live.js'
+var _commonJs = require('./common.js');
 
-function start() {
+var time_v1 = 1;
 
-	var tl = (0, _commonJsCommonJs.init)();
-	tl.set(".bg2", { x: -_commonJsCommonJs.size.w * .5, y: _commonJsCommonJs.size.h, scale: .43 });
+function live_1() {
+
+	var tl = (0, _commonJs.init)();
+	// tl.set(".bg2", {x:-size.w*.5, y:size.h, scale:.43 })
+	tl.set(".bg2", { x: _commonJs.size.w, y: -_commonJs.size.h * .5, scale: .43 });
 
 	tl.from(".t1a", .3, { opacity: 0 }, "+=.3");
 	tl.from(".t1b", .3, { opacity: 0 }, "+=.5");
 
-	tl.from(".gold", .3, { y: _commonJsCommonJs.size.h, ease: Power4.easeOut }, "+=2");
-	tl.to(".bg2", .3, { y: -_commonJsCommonJs.size.h * .5, ease: Power4.easeOut }, "+=.1");
+	tl.from(".gold", .3, { x: _commonJs.size.w, ease: Power4.easeOut }, "+=2");
+	tl.to(".bg2", .3, { x: -_commonJs.size.w * .5, ease: Power4.easeOut }, "+=.1");
 	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
 	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
 
-	tl.add((0, _commonJsCommonJs.slicerTween)(), "+=4");
+	tl.add((0, _commonJs.slicerTween)(), "+=4");
 }
 
-start();
+function live_1_landscape() {
+
+	var tl = (0, _commonJs.init)();
+	tl.set(".bg2", { x: -_commonJs.size.w * .5, y: _commonJs.size.h, scale: .43 });
+
+	tl.from(".t1a", .3, { opacity: 0 }, "+=.3");
+	tl.from(".t1b", .3, { opacity: 0 }, "+=.5");
+
+	tl.from(".gold", .3, { y: _commonJs.size.h, ease: Power4.easeOut }, "+=2");
+	tl.to(".bg2", .3, { y: -_commonJs.size.h * .5, ease: Power4.easeOut }, "+=.1");
+	tl.to(".bg2", .4, { scale: .5, ease: Back.easeOut }, "+=.1");
+	tl.from(".t2", .4, { opacity: 0 }, "+=.1");
+
+	tl.add((0, _commonJs.slicerTween)(), "+=4");
+}
+
+exports.live_1 = live_1;
+exports.live_1_landscape = live_1_landscape;
+
+},{"./common.js":1}],3:[function(require,module,exports){
+'use strict';
+
+var _commonJsCommonJs = require('../../_common/js/common.js');
+
+var _commonJsLiveJs = require('../../_common/js/live.js');
+
+(0, _commonJsLiveJs.live_1_landscape)();
 
 module.exports = {};
 
-},{"../../_common/js/common.js":1}]},{},[2])
+},{"../../_common/js/common.js":1,"../../_common/js/live.js":2}]},{},[3])
 
 
 //# sourceMappingURL=main.js.map
