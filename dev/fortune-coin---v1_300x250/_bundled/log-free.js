@@ -1,4 +1,36 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _commonJs = require('./common.js');
+
+function coin_v1() {
+
+	var tl = (0, _commonJs.init)();
+
+	TweenLite.defaultEase = Power3.easeOut;
+
+	var speed = .7;
+
+	tl.from(".t1", .4, { opacity: 0 }, "+=.3");
+
+	tl.add("t1-out", "+=2.7");
+	tl.to(".t1", speed, { opacity: 0, y: "+=" + _commonJs.size.h }, "t1-out");
+	tl.to(".dragon", speed, { opacity: 0, y: "+=" + _commonJs.size.h }, "t1-out");
+
+	tl.from(".screen", speed, { y: "-=" + _commonJs.size.h }, "t1-out");
+	tl.from(".dragon2", speed, { y: "-=" + _commonJs.size.h }, "t1-out+=.3");
+	tl.from(".t2", speed, { y: "-=" + _commonJs.size.h });
+
+	tl.add((0, _commonJs.slicerTween)(), "+=3");
+}
+
+exports.coin_v1 = coin_v1;
+
+},{"./common.js":2}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -94,38 +126,18 @@ exports.range = range;
 exports.slicerTween = slicerTween;
 exports.init = init;
 
-},{}],2:[function(require,module,exports){
-"use strict";
+},{}],3:[function(require,module,exports){
+'use strict';
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
+var _commonJsCoinJs = require('../../_common/js/coin.js');
+
 function start() {
 
-	var tl = (0, _commonJsCommonJs.init)();
-
-	TweenLite.defaultEase = Power3.easeOut;
-
-	var speed = .7;
 	group1();
-	// group2()
 
-	tl.from(".t1", .4, { opacity: 0 }, "+=.3");
-
-	tl.add("t1-out", "+=2.7");
-	tl.to(".t1", speed, { opacity: 0, y: "+=300" }, "t1-out");
-	tl.to(".dragon", speed, { opacity: 0, y: "+=300" }, "t1-out");
-
-	tl.add("t2-in");
-
-	tl.from(".screen", speed, { y: "-=300" }, "t1-out");
-	tl.from(".dragon2", speed, { y: "-=300" }, "t1-out+=.3");
-	tl.from(".t2", .4, { y: "-=80" });
-
-	tl.add("end", "+=3");
-
-	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
-
-	// tl.gotoAndPlay("f2")
+	(0, _commonJsCoinJs.coin_v1)();
 }
 
 function group1() {
@@ -136,20 +148,11 @@ function group1() {
 	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .4);
 }
 
-function group2() {
-	var tl = new TimelineMax();
-	tl.add("t2", 3.2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 100, 1), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 130, 1), "t2+=.2");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 180, 1), "t2+=.3");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 200, 1), "t2+=.4");
-}
-
 start();
 
 module.exports = {};
 
-},{"../../_common/js/common.js":1}]},{},[2])
+},{"../../_common/js/coin.js":1,"../../_common/js/common.js":2}]},{},[3])
 
 
 //# sourceMappingURL=main.js.map
