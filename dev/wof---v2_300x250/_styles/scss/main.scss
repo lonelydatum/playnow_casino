@@ -1,0 +1,59 @@
+
+
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/playnow.scss';
+@import '../../../_common/styles/type_wof.scss';
+
+#take_1{ @include pos(24, 64); }
+#take_2{ @include pos(57, 64); }
+#take_3{ @include pos(90, 64); }
+#take_4{ @include pos(123, 64); }
+
+
+#anytime_5{ @include pos(155, 64); }
+
+
+
+
+
+#it_1{ @include pos(188, 64); }
+#it_2{ @include pos(220, 64); }
+
+
+
+
+#for_1{ @include pos(25, 106); }
+#for_2{ @include pos(57, 106); }
+#for_3{ @include pos(90, 106); }
+
+
+#a_1{ @include pos(155, 106); }
+
+
+
+#spin_1{ @include pos(25, 147); }
+#spin_2{ @include pos(57, 147); }
+#spin_3{ @include pos(90, 147); }
+#spin_4{ @include pos(122, 147); }
+
+.frame1 {
+	// opacity: 1;
+}
+
+
+
+
+#banner{
+	font-size: 20px;
+	color: #333;
+	width: 300px;
+	height: 250px;
+}
+
+
+
+.flip-card, .flip-card-back {
+  width: 28px;
+  height: 40px;  
+}
+
