@@ -9,6 +9,9 @@ function start() {
 
 	var tl = (0, _commonJsCommonJs.init)();
 
+	group1();
+	group2();
+
 	TweenLite.defaultEase = Power3.easeOut;
 
 	// return
@@ -25,6 +28,23 @@ function start() {
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
 
 	// tl.gotoAndPlay("f2")
+}
+
+function group1() {
+	var tl = new TimelineMax();
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -30, 3), .2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 0, 3), .4);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 50, 3), .3);
+}
+
+function group2() {
+	var tl = new TimelineMax();
+	tl.add("t2", 3.2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 100, 2), "t2+=.1");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 130, 2), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 180, 2), "t2+=.3");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 200, 2), "t2+=.4");
 }
 
 start();
