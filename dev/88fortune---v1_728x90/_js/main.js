@@ -48,6 +48,8 @@ function group2(){
 	tl.add("t2", 3.2)
 	tl.add(coinItem(".coin_a", 380, 2), "t2+=.1")
 	tl.add(coinItem(".coin_b", 440, 2), "t2+=.2")
+	tl.add(coinItem(".coin_c", 500, 3), "t2+=.3")
+	tl.add(coinItem(".coin_d", 600, 3), "t2+=.4")
 	
 }
 

@@ -521,9 +521,9 @@ sup {
 }
 
 .coin_c {
-  -webkit-transform: translate(0px, -100px) scale(0.25, 0.25);
-  -ms-transform: translate(0px, -100px) scale(0.25, 0.25);
-  transform: translate(0px, -100px) scale(0.25, 0.25);
+  -webkit-transform: translate(0px, -100px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, -100px) scale(0.5, 0.5);
+  transform: translate(0px, -100px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

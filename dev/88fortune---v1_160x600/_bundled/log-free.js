@@ -32,6 +32,8 @@ function group1() {
 	var tl = new TimelineMax();
 	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", -60, 3), 0);
 	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 90, 3), .4);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", -50, 3), .2);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 110, 3), .4);
 }
 
 function group2() {

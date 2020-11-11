@@ -38,6 +38,8 @@ function group1(){
 	const tl = new TimelineMax()
 	tl.add(coinItem(".coin_a", -60, 3), 0)
 	tl.add(coinItem(".coin_d", 90, 3), .4)
+	tl.add(coinItem(".coin_b", -50, 3), .2)
+	tl.add(coinItem(".coin_c", 110, 3), .4)
 }
 
 function group2(){
