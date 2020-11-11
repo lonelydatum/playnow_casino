@@ -117,7 +117,7 @@ function slicerTween() {
 
 	tl.to([".a"], time, { y: '+=' + size.h }, 0);
 	tl.to([".b"], time, { y: '+=' + size.h }, .2);
-	tl.to([".c"], time, { y: '+=' + size.h }, .3);
+	tl.to([".c"], time, { y: '+=' + size.h }, .4);
 
 	// const time = 10
 	// tl.to(".a", time, {y:`+=${size.h}`}, 0)

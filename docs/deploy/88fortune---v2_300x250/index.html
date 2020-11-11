@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Created: Nov 11, 10:12</title>
+<title>Created: Nov 11, 10:22</title>
 <style>#banner{opacity: 0;}</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="ad.size" content="width=300, height=250">
@@ -23,17 +23,17 @@
 <div class="mask f1 a">
 <img src="bg.jpg" class="">
 <img src="t2.png" class="shadow retina">
-<img src="screen.png" class="retina">
+<img src="screen.png" class="retina screen">
 </div>
 <div class="mask f1 b">
 <img src="bg.jpg" class="">
 <img src="t2.png" class="shadow retina">
-<img src="screen.png" class="retina">
+<img src="screen.png" class="retina screen">
 </div>
 <div class="mask f1 c">
 <img src="bg.jpg" class="">
 <img src="t2.png" class="shadow retina">
-<img src="screen.png" class="retina">
+<img src="screen.png" class="retina screen">
 </div>
 <img src="logo.png" class="retina logo">
 <img src="frame_end_b.jpg" id="f2" class="retina mask f2 a">
@@ -48,5 +48,5 @@
 </div>
 </body>
 <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.1.2_min.js"></script>
-<script>!function e(t,n,r){function o(i,c){if(!n[i]){if(!t[i]){var s="function"==typeof require&&require;if(!c&&s)return s(i,!0);if(a)return a(i,!0);var p=new Error("Cannot find module '"+i+"'");throw p.code="MODULE_NOT_FOUND",p}var u=n[i]={exports:{}};t[i][0].call(u.exports,function(e){var n=t[i][1][e];return o(n?n:e)},u,u.exports,e,t,n,r)}return n[i].exports}for(var a="function"==typeof require&&require,i=0;i<r.length;i++)o(r[i]);return o}({1:[function(e,t,n){"use strict";function r(){var e=o.init();TweenLite.defaultEase=Power3.easeOut,e.from(".t1",.4,{opacity:0,x:"-=300"}),e.from(".pot",.4,{x:"-=300"}),e.add("t1-out",a.data.v2_t1),e.to(".t1",.6,{x:"+=300"},"t1-out"),e.to(".pot",.6,{x:300,opacity:0},"t1-out"),e.from(".screen",.5,{x:"-=500"},"t1-out+=.2"),e.from(".t2",.5,{x:"-=400"},"t1-out+=.4"),e.add("end","+="+a.data.v1_t2),e.add(o.slicerTween(),"end")}var o=e("../../_common/js/common.js"),a=e("../../_common/js/88.js");r(),t.exports={}},{"../../_common/js/88.js":2,"../../_common/js/common.js":3}],2:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={v1_t1:2.5,v1_t2:3.2,v2_t1:3.5,v2_t2:3};n.data=r},{}],3:[function(e,t,n){"use strict";function r(e){Enabler.exit("Background Exit")}function o(){var e=u.h,t=u.w/3;TweenLite.set(".f1.a",{clip:"rect(0px,"+t+"px,"+e+"px, "+(1*t-t)+"px)"}),TweenLite.set(".f1.b",{clip:"rect(0px,"+2*t+"px,"+e+"px,"+(2*t-t)+"px)"}),TweenLite.set(".f1.c",{clip:"rect(0px,"+3*t+"px,"+e+"px,"+(3*t-t)+"px)"});TweenLite.set(".shadMain",{height:"200%",opacity:0}),TweenLite.set(".f2.a",{clip:"rect(0px,"+t+"px,"+e+"px, "+(1*t-t)+"px)",y:-e}),TweenLite.set(".f2.b",{clip:"rect(0px,"+2*t+"px,"+e+"px,"+(2*t-t)+"px)",y:-e}),TweenLite.set(".f2.c",{clip:"rect(0px,"+3*t+"px,"+e+"px,"+(3*t-t)+"px)",y:-e})}function a(e,t){var n=t-e,r=Math.random()*n+e;return r}function i(){TweenLite.set(".shad",{opacity:1});var e=new TimelineMax;e.set([".f1",".f2"],{opacity:1}),e.to(".shadMain",.3,{opacity:1,ease:Power2.easeIn});var t=u.h/450;return t=Math.max(t,.4),e.to([".a"],t,{y:"+="+u.h},0),e.to([".b"],t,{y:"+="+u.h},.2),e.to([".c"],t,{y:"+="+u.h},.3),e.to(".shad",.2,{opacity:0,ease:Power2.easeIn},"+=0"),e}function c(){var e=new TimelineMax;e.set(".frame1",{opacity:1});var t=u.w/3,n=-u.h;return e.set(".shad1",{x:0*t,y:n}),e.set(".shad2",{x:1*t,y:n}),e.set(".shad3",{x:2*t,y:n}),setTimeout(function(){},2e3),o(),e}function s(e,t,n){var r=new TimelineMax({repeat:n});a(0,.8);r.set(e,{x:t,y:-100});var o=u.h,i=o/500;return i=Math.max(i,.7),i=Math.min(i,1),r.to(e,i,{y:o,rotation:"+=500}",ease:Power1.easeIn}),r}Object.defineProperty(n,"__esModule",{value:!0});var p=document.getElementById("banner"),u={w:p.offsetWidth,h:p.offsetHeight};TweenLite.defaultEase=Power3.easeInOut,document.getElementById("banner").addEventListener("click",r,!1),n.coinItem=s,n.size=u,n.range=a,n.slicerTween=i,n.init=c},{}]},{},[1]);</script>
+<script>!function e(t,n,r){function o(a,s){if(!n[a]){if(!t[a]){var c="function"==typeof require&&require;if(!s&&c)return c(a,!0);if(i)return i(a,!0);var p=new Error("Cannot find module '"+a+"'");throw p.code="MODULE_NOT_FOUND",p}var u=n[a]={exports:{}};t[a][0].call(u.exports,function(e){var n=t[a][1][e];return o(n?n:e)},u,u.exports,e,t,n,r)}return n[a].exports}for(var i="function"==typeof require&&require,a=0;a<r.length;a++)o(r[a]);return o}({1:[function(e,t,n){"use strict";function r(){var e=o.init();TweenLite.defaultEase=Power3.easeOut,e.from(".pot",.4,{y:"-="+o.size.h}),e.from(".t1",.4,{opacity:0,y:"-="+o.size.h}),e.add("t1-out",i.data.v2_t1),e.to(".t1",.6,{y:"+="+o.size.h},"t1-out"),e.to(".pot",.6,{y:"+="+o.size.h,opacity:0},"t1-out"),e.from(".screen",.5,{y:"-="+o.size.h},"t1-out+=.2"),e.from(".t2",.5,{y:"-="+o.size.h},"t1-out+=.4"),e.add("end","+="+i.data.v1_t2),e.add(o.slicerTween(),"end")}var o=e("../../_common/js/common.js"),i=e("../../_common/js/88.js");r(),t.exports={}},{"../../_common/js/88.js":2,"../../_common/js/common.js":3}],2:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={v1_t1:2.5,v1_t2:3.2,v2_t1:3.5,v2_t2:3};n.data=r},{}],3:[function(e,t,n){"use strict";function r(e){Enabler.exit("Background Exit")}function o(){var e=u.h,t=u.w/3;TweenLite.set(".f1.a",{clip:"rect(0px,"+t+"px,"+e+"px, "+(1*t-t)+"px)"}),TweenLite.set(".f1.b",{clip:"rect(0px,"+2*t+"px,"+e+"px,"+(2*t-t)+"px)"}),TweenLite.set(".f1.c",{clip:"rect(0px,"+3*t+"px,"+e+"px,"+(3*t-t)+"px)"});TweenLite.set(".shadMain",{height:"200%",opacity:0}),TweenLite.set(".f2.a",{clip:"rect(0px,"+t+"px,"+e+"px, "+(1*t-t)+"px)",y:-e}),TweenLite.set(".f2.b",{clip:"rect(0px,"+2*t+"px,"+e+"px,"+(2*t-t)+"px)",y:-e}),TweenLite.set(".f2.c",{clip:"rect(0px,"+3*t+"px,"+e+"px,"+(3*t-t)+"px)",y:-e})}function i(e,t){var n=t-e,r=Math.random()*n+e;return r}function a(){TweenLite.set(".shad",{opacity:1});var e=new TimelineMax;e.set([".f1",".f2"],{opacity:1}),e.to(".shadMain",.3,{opacity:1,ease:Power2.easeIn});var t=u.h/450;return t=Math.max(t,.4),e.to([".a"],t,{y:"+="+u.h},0),e.to([".b"],t,{y:"+="+u.h},.2),e.to([".c"],t,{y:"+="+u.h},.4),e.to(".shad",.2,{opacity:0,ease:Power2.easeIn},"+=0"),e}function s(){var e=new TimelineMax;e.set(".frame1",{opacity:1});var t=u.w/3,n=-u.h;return e.set(".shad1",{x:0*t,y:n}),e.set(".shad2",{x:1*t,y:n}),e.set(".shad3",{x:2*t,y:n}),setTimeout(function(){},2e3),o(),e}function c(e,t,n){var r=new TimelineMax({repeat:n});i(0,.8);r.set(e,{x:t,y:-100});var o=u.h,a=o/500;return a=Math.max(a,.7),a=Math.min(a,1),r.to(e,a,{y:o,rotation:"+=500}",ease:Power1.easeIn}),r}Object.defineProperty(n,"__esModule",{value:!0});var p=document.getElementById("banner"),u={w:p.offsetWidth,h:p.offsetHeight};TweenLite.defaultEase=Power3.easeInOut,document.getElementById("banner").addEventListener("click",r,!1),n.coinItem=c,n.size=u,n.range=i,n.slicerTween=a,n.init=s},{}]},{},[1]);</script>
 </html>

@@ -9,16 +9,16 @@ function start(){
 	TweenLite.defaultEase = Power3.easeOut
 	
 	// return
-
-	tl.from(".t1", .4, {opacity:0, x:"-=300"})
+	tl.from(".pot", .4, {y:`-=${size.h}`})
+	tl.from(".t1", .4, {opacity:0, y:`-=${size.h}`})
 	
-	tl.from(".pot", .4, {x:"-=300"})
+	
 	
 	tl.add("t1-out", data.v2_t1)
-	tl.to(".t1", .6, {x:"+=300"}, "t1-out")	
-	tl.to(".pot", .6, {x:300, opacity:0}, "t1-out")
-	tl.from(".screen", .5, {x:"-=500"}, "t1-out+=.2" )
-	tl.from(".t2", .5, {x:"-=400"}, "t1-out+=.4" )
+	tl.to(".t1", .6, {y:`+=${size.h}`}, "t1-out")	
+	tl.to(".pot", .6, {y:`+=${size.h}`, opacity:0}, "t1-out")
+	tl.from(".screen", .5, {y:`-=${size.h}`}, "t1-out+=.2" )
+	tl.from(".t2", .5, {y:`-=${size.h}`}, "t1-out+=.4" )
 	
 	
 	

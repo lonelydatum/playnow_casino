@@ -45,15 +45,6 @@ function group2() {
 	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 200, 1), "t2+=.4");
 }
 
-// function coinItem(id, x, repeat){
-// 	const tl = new TimelineMax({repeat:repeat})	
-// 	const delay = range(0, .8)
-// 	const time = range(.5, .8)	
-// 	tl.set(id,  {x, y:-100})
-// 	tl.to(id, .7, {y:"+=340", rotation:"+=190",ease:Power1.easeIn})
-// 	return tl
-// }
-
 start();
 
 module.exports = {};
@@ -133,7 +124,7 @@ function slicerTween() {
 
 	tl.to([".a"], time, { y: '+=' + size.h }, 0);
 	tl.to([".b"], time, { y: '+=' + size.h }, .2);
-	tl.to([".c"], time, { y: '+=' + size.h }, .3);
+	tl.to([".c"], time, { y: '+=' + size.h }, .4);
 
 	// const time = 10
 	// tl.to(".a", time, {y:`+=${size.h}`}, 0)

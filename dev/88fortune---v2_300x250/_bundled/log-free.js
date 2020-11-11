@@ -12,16 +12,14 @@ function start() {
 	TweenLite.defaultEase = Power3.easeOut;
 
 	// return
-
-	tl.from(".t1", .4, { opacity: 0, x: "-=300" });
-
-	tl.from(".pot", .4, { x: "-=300" });
+	tl.from(".pot", .4, { y: '-=' + _commonJsCommonJs.size.h });
+	tl.from(".t1", .4, { opacity: 0, y: '-=' + _commonJsCommonJs.size.h });
 
 	tl.add("t1-out", _commonJs88Js.data.v2_t1);
-	tl.to(".t1", .6, { x: "+=300" }, "t1-out");
-	tl.to(".pot", .6, { x: 300, opacity: 0 }, "t1-out");
-	tl.from(".screen", .5, { x: "-=500" }, "t1-out+=.2");
-	tl.from(".t2", .5, { x: "-=400" }, "t1-out+=.4");
+	tl.to(".t1", .6, { y: '+=' + _commonJsCommonJs.size.h }, "t1-out");
+	tl.to(".pot", .6, { y: '+=' + _commonJsCommonJs.size.h, opacity: 0 }, "t1-out");
+	tl.from(".screen", .5, { y: '-=' + _commonJsCommonJs.size.h }, "t1-out+=.2");
+	tl.from(".t2", .5, { y: '-=' + _commonJsCommonJs.size.h }, "t1-out+=.4");
 
 	tl.add("end", '+=' + _commonJs88Js.data.v1_t2);
 	tl.add((0, _commonJsCommonJs.slicerTween)(), "end");
@@ -108,7 +106,7 @@ function slicerTween() {
 
 	tl.to([".a"], time, { y: '+=' + size.h }, 0);
 	tl.to([".b"], time, { y: '+=' + size.h }, .2);
-	tl.to([".c"], time, { y: '+=' + size.h }, .3);
+	tl.to([".c"], time, { y: '+=' + size.h }, .4);
 
 	// const time = 10
 	// tl.to(".a", time, {y:`+=${size.h}`}, 0)
