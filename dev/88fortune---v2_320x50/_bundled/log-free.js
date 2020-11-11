@@ -32,16 +32,18 @@ function start() {
 function group1() {
 	var tl = new TimelineMax();
 
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 100, 3), .1);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 160, 3), .4);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 220, 3), .7);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 180, 3), .1);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 160, 3), .3);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 190, 3), .5);
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 230, 3), .7);
 }
 
 function group2() {
 	var tl = new TimelineMax();
 	tl.add("t2", 3.2);
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 160, 0), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 220, 0), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 160, 2), "t2+=.1");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 220, 2), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 230, 2), "t2+=.3");
 	// tl.add(coinItem(".coin_c", 180, 1), "t2+=.3")
 	// tl.add(coinItem(".coin_d", 200, 1), "t2+=.4")
 }
