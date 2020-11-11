@@ -187,10 +187,10 @@ function start() {
 function group1() {
 	var tl = new TimelineMax();
 
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 300, 5), "t2+=.1");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 400, 5), "t2+=.2");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 500, 5), "t2+=.3");
-	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 600, 5), "t2+=.4");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_a", 300, 6), "t2+=.1");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_b", 400, 6), "t2+=.2");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_c", 500, 6), "t2+=.3");
+	tl.add((0, _commonJsCommonJs.coinItem)(".coin_d", 600, 6), "t2+=.4");
 }
 
 start();
