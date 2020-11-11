@@ -102,9 +102,10 @@ function slicerSet() {
 	var h_ = h * 2;
 	var w_ = w * 2;
 	void 0;
-	TweenLite.set('.f2.a', { clip: 'rect(0px,' + w_ + 'px,' + h_ + 'px, ' + (w_ * 1 - w_) + 'px)', y: -h });
-	TweenLite.set('.f2.b', { clip: 'rect(0px,' + w_ * 2 + 'px,' + h_ + 'px,' + (w_ * 2 - w_) + 'px)', y: -h });
-	TweenLite.set('.f2.c', { clip: 'rect(0px,' + w_ * 3 + 'px,' + h_ + 'px,' + (w_ * 3 - w_) + 'px)', y: -h });
+	TweenLite.set('.shadMain', { height: "200%", opacity: 0 });
+	TweenLite.set('.f2.a', { clip: 'rect(0px,' + w + 'px,' + h + 'px, ' + (w * 1 - w) + 'px)', y: -h });
+	TweenLite.set('.f2.b', { clip: 'rect(0px,' + w * 2 + 'px,' + h + 'px,' + (w * 2 - w) + 'px)', y: -h });
+	TweenLite.set('.f2.c', { clip: 'rect(0px,' + w * 3 + 'px,' + h + 'px,' + (w * 3 - w) + 'px)', y: -h });
 }
 
 function range(min, max) {
@@ -114,19 +115,31 @@ function range(min, max) {
 }
 
 function slicerTween() {
+
 	TweenLite.set(".shad", { opacity: 1 });
+
 	var tl = new TimelineMax();
+	void 0;
+
 	tl.set([".f1", ".f2"], { opacity: 1 });
+	tl.to('.shadMain', .3, { opacity: 1, ease: Power2.easeIn });
 
 	var time = size.h / 450;
+
 	time = Math.max(time, .4);
 
-	// const time = 5
+	// time = 10
+
 	tl.to([".a"], time, { y: '+=' + size.h }, 0);
 	tl.to([".b"], time, { y: '+=' + size.h }, .2);
 	tl.to([".c"], time, { y: '+=' + size.h }, .3);
 
-	tl.to(".shad", .5, { opacity: 0 }, "+=.15");
+	// const time = 10
+	// tl.to(".a", time, {y:`+=${size.h}`}, 0)
+	// tl.to(".b", time, {y:`+=${size.h}`}, 0)
+	// tl.to(".c", time, {y:`+=${size.h}`}, 0)
+
+	tl.to(".shad", .2, { opacity: 0, ease: Power2.easeIn }, "+=0");
 	return tl;
 }
 
@@ -141,9 +154,10 @@ function init() {
 
 	// tl.set(".shad", {opacity:0})
 	setTimeout(function () {
-		slicerSet();
+		// slicerSet()
 		// slicerSet('f2')
 	}, 2000);
+	slicerSet();
 	return tl;
 }
 

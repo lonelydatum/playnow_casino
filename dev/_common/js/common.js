@@ -22,9 +22,10 @@ function slicerSet(){
 	const h_ = h * 2
 	const w_ = w * 2
 	console.log(w_, h_);
-	TweenLite.set(`.f2.a`, {clip: `rect(0px,${w_}px,${h_}px, ${(w_*1)-w_}px)`, y:-h})
-	TweenLite.set(`.f2.b`, {clip: `rect(0px,${w_*2}px,${h_}px,${(w_*2)-w_}px)`, y:-h})
-	TweenLite.set(`.f2.c`, {clip: `rect(0px,${w_*3}px,${h_}px,${(w_*3)-w_}px)`, y:-h})
+	TweenLite.set(`.shadMain`, {height:"200%", opacity:0} )
+	TweenLite.set(`.f2.a`, {clip: `rect(0px,${w}px,${h}px, ${(w*1)-w}px)`, y:-h})
+	TweenLite.set(`.f2.b`, {clip: `rect(0px,${w*2}px,${h}px,${(w*2)-w}px)`, y:-h})
+	TweenLite.set(`.f2.c`, {clip: `rect(0px,${w*3}px,${h}px,${(w*3)-w}px)`, y:-h})
 	
 }
 
@@ -35,20 +36,32 @@ function range(min, max) {
 }
 
 function slicerTween(){
+	
 	TweenLite.set(".shad", {opacity:1})
+	
 	const tl = new TimelineMax()
+	console.log(size.h);
+
 	tl.set([".f1", ".f2"], {opacity:1})
+	tl.to(`.shadMain`, .3, {opacity:1, ease:Power2.easeIn})
 
 	let time = size.h / 450
+
 	time = Math.max(time, .4)
-	
-	// const time = 5
+
+	// time = 10
+		
 	tl.to([".a"], time, {y:`+=${size.h}`}, 0)
 	tl.to([".b"], time, {y:`+=${size.h}`}, .2)
 	tl.to([".c"], time, {y:`+=${size.h}`}, .3)
 
+	// const time = 10
+	// tl.to(".a", time, {y:`+=${size.h}`}, 0)
+	// tl.to(".b", time, {y:`+=${size.h}`}, 0)
+	// tl.to(".c", time, {y:`+=${size.h}`}, 0)
 
-	tl.to(".shad", .5, {opacity:0}, "+=.15")
+
+	tl.to(".shad", .2, {opacity:0, ease:Power2.easeIn}, "+=0")
 	return tl
 }
 
@@ -63,9 +76,10 @@ function init(){
 
 	// tl.set(".shad", {opacity:0})
 	setTimeout(()=>{
-		slicerSet()
+		// slicerSet()
 		// slicerSet('f2')
 	}, 2000)
+	slicerSet()
 	return tl
 }
 
