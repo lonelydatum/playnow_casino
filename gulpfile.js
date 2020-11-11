@@ -101,6 +101,24 @@ gulp.task('deploy', ['sass-all', 'js-all', 'ejs-all'], function(done){
 
 
 
+gulp.task('image-compress',  function(done){
+    glob('./dev/**/index.html', function(err, files) {
+        if(err) done(err);
+        var tasks = files.map(function(entry) {
+            var projectName = entry.split('/')[2];
+             var stream = gulp.src('./docs/deploy/'+projectName+'/**',  { base : "./docs/deploy" })
+                    .pipe(zip(projectName+'.zip'))
+                    .pipe(gulp.dest('./docs/zips'));
+
+            return stream
+            
+        });
+        es.merge(tasks).on('end', done);
+    })
+})
+
+
+
 
 gulp.task('dev-all-basic', function(){
     gulp.watch(["dev/**/*.js", "dev/_common/js/*.js", "!dev/**/_bundled/*.js"], ["js-all"]);

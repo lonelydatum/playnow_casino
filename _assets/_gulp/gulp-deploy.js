@@ -46,7 +46,17 @@ function log_free(projectName){
         .pipe(gulp.dest(function(file){            
             return file.base;
         }))
-        
+    
+
+    
+    
+
+    // var stream2 =  gulp.src('./dev/'+projectName+'/images/**.*')
+    // .pipe(imagemin())
+    // .pipe(gulp.dest('./docs/deploy/'+projectName));
+
+
+
     var stream2 =  gulp.src('./dev/'+projectName+'/images/**.*')
     .pipe(gulp.dest('./docs/deploy/'+projectName));
     
