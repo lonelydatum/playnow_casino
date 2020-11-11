@@ -1,0 +1,61 @@
+
+
+@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/playnow.scss';
+
+@import '../../../_common/styles/type_wof.scss';
+
+
+
+#how_1{
+  @include pos(56, 75);
+}
+
+#do_1{
+	@include pos(210, 75);
+}
+
+#you_1{
+	@include pos(56, 124);
+}
+
+#you_2{
+	@include pos(94, 124);
+}
+
+
+#spell_1{
+	@include pos(94, 174);
+}
+
+#fun_1{
+	@include pos(55, 222);
+}
+
+.wheel{
+	@include pos(46, 294);
+}
+
+
+.frame1 {
+	// opacity: 1;
+}
+
+
+#banner{
+	width: 300px;
+	height: 600px;
+}
+
+.logo{
+	-webkit-filter: drop-shadow(0px 0px 9px rgba(0,0,0,.9));
+  	filter: drop-shadow(0px 0px 9px rgba(0,0,0,.9));
+
+
+}
+
+.flip-card, .flip-card-back {  
+  width: 35px;
+  height: 53px;  
+}
+
