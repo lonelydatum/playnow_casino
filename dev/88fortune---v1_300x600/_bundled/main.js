@@ -18,8 +18,8 @@ function start() {
 
 	tl.to(".t1", .6, { opacity: 0, y: "+=400", ease: Power3.easeOut }, _commonJs88Js.data.v1_t1);
 
-	tl.from([".t2"], .5, { opacity: 0, y: "-=200" }, "+=0");
-	tl.from([".screen"], .5, { opacity: 0, y: "-=100" }, "+=.1");
+	tl.from([".screen"], .5, { opacity: 0, y: "-=100" }, "+=0");
+	tl.from([".t2"], .5, { opacity: 0, y: "-=200" }, "-=.1");
 
 	tl.add("end", '+=' + _commonJs88Js.data.v1_t2);
 
