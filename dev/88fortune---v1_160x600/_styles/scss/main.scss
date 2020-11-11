@@ -9,11 +9,6 @@
 	// opacity: 1;
 }
 
-.coin{
-	transform-origin: 50% 50%;
-	@include pos-scale(0, -100, .5);
-}
-
 
 .mask{
 	width: 100%;

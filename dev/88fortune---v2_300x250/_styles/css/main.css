@@ -484,6 +484,20 @@ sup {
   position: absolute;
 }
 
+.coin {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(0px, -100px) scale(0.3, 0.3);
+  -ms-transform: translate(0px, -100px) scale(0.3, 0.3);
+  transform: translate(0px, -100px) scale(0.3, 0.3);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
 .pot {
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
@@ -499,20 +513,6 @@ sup {
   -webkit-transform: translate(100px, 11px) scale(0.5, 0.5);
   -ms-transform: translate(100px, 11px) scale(0.5, 0.5);
   transform: translate(100px, 11px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin {
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-transform: translate(0px, -100px) scale(0.5, 0.5);
-  -ms-transform: translate(0px, -100px) scale(0.5, 0.5);
-  transform: translate(0px, -100px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
