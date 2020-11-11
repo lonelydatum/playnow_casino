@@ -101,6 +101,32 @@ gulp.task('deploy', ['sass-all', 'js-all', 'ejs-all'], function(done){
 
 
 
+gulp.task('image',  function(done){
+    console.log('sldkfjskldfjkl');
+    var tinypng = require('gulp-tinypng-compress');
+
+
+    // glob('./dev/**/index.html', function(err, files) {
+    //     if(err) done(err);
+    //     var tasks = files.map(function(entry) {
+    //         var projectName = entry.split('/')[2];
+
+    //         return gulp.src('./dev/'+projectName+'/images/*')
+    //             .pipe(imagemin())
+    //             .pipe(gulp.dest('./docs/deploy/'+projectName))
+
+
+             
+
+            
+            
+    //     });
+    //     es.merge(tasks).on('end', done);
+    // })
+})
+
+
+
 
 gulp.task('dev-all-basic', function(){
     gulp.watch(["dev/**/*.js", "dev/_common/js/*.js", "!dev/**/_bundled/*.js"], ["js-all"]);
