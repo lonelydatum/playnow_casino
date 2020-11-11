@@ -14,8 +14,8 @@ function start(){
 
 function group1(){
 	const tl = new TimelineMax()
-	tl.add(coinItem(".coin_a", -60, 6), 0)
-	tl.add(coinItem(".coin_b", -30, 6), .2)
+	tl.add(coinItem(".coin_a", 120, 6), 0)
+	tl.add(coinItem(".coin_b", 150, 6), .2)
 	tl.add(coinItem(".coin_c", 210, 6), .1)
 	tl.add(coinItem(".coin_d", 230, 6), .4)
 }
