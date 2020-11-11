@@ -18,6 +18,27 @@
 	@include pos-scale(100, 11, .5);
 }
 
+.coin{
+	transform-origin: 50% 50%;
+	@include pos-scale(0, -100, .5);
+}
+
+.coin_a{	
+	@include pos-scale(0, -100, .3);
+}
+
+.coin_b{	
+	@include pos-scale(0, -100, .4);
+}
+
+.coin_c{	
+	@include pos-scale(0, -100, .3);
+}
+
+.coin_d{	
+	@include pos-scale(0, -100, .4);
+}
+
 
 
 #banner{
