@@ -37,7 +37,7 @@ function start(){
 function group1(){
 	const tl = new TimelineMax()
 	
-	tl.add(coinItem(".coin_a", 100, 3), .1)
+	tl.add(coinItem(".coin_a", 140, 3), .1)
 	tl.add(coinItem(".coin_b", 160, 3), .4)
 	tl.add(coinItem(".coin_c", 220, 3), .7)
 }
@@ -45,8 +45,9 @@ function group1(){
 function group2(){
 	const tl = new TimelineMax()
 	tl.add("t2", 3.2)
-	tl.add(coinItem(".coin_a", 160, 0), "t2+=.1")
-	tl.add(coinItem(".coin_b", 220, 0), "t2+=.2")
+	tl.add(coinItem(".coin_a", 160, 2), "t2+=.1")
+	tl.add(coinItem(".coin_b", 220, 2), "t2+=.2")
+	tl.add(coinItem(".coin_c", 140, 2), "t2+=.3")
 	// tl.add(coinItem(".coin_c", 180, 1), "t2+=.3")
 	// tl.add(coinItem(".coin_d", 200, 1), "t2+=.4")
 }
